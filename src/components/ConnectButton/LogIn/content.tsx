@@ -20,6 +20,7 @@ const LogInButton = styled("button")({
   margin: "0 !important",
   color: "#F8F9FA",
   textDecoration: "capitalize",
+  border: 'none',
   "&:hover": {
     background: "hsl(223, 6%, 23%)",
     "svg": {

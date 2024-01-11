@@ -20,7 +20,7 @@ export default function RootLayout({
     process.env.NEXT_PUBLIC_REACT_APP_SOLANA_RPC_HOST ??
     clusterApiUrl("devnet");
 
-  const MAGIC_KEY = "";
+  const MAGIC_KEY = process.env.NEXT_PUBLIC_MAGIC_KEY;
 
   return (
     <html lang="en">

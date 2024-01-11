@@ -63,6 +63,7 @@ export const ConnectedContent = ({
 
 const ListItemButton = styled("button")({
   display: "flex",
+  background: 'transparent',
   gap: "1rem",
   justifyContent: "flex-start",
   padding: "0.5rem",

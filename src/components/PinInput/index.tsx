@@ -41,7 +41,6 @@ const PinInput = ({ onComplete, error = false }: PinInputComponentProps) => {
 
   return (
     <Input
-      className={error ? ".pin-input-error" : ""}
       validateChar={handleValidInput}
       length={6}
       value={value}

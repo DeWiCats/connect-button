@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 
 const WalletButton = styled("button")({
   display: "flex",
+  background: 'transparent',
   gap: "1rem",
   justifyContent: "flex-start",
   padding: "0.5rem",

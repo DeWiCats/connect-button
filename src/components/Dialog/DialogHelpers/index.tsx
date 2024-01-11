@@ -1,11 +1,15 @@
 import { IconButton as Button, styled } from "@mui/material";
 import { CSSProperties } from "react";
 
-export const DialogActionButton = styled('button')({
+export const DialogActionButton = styled("button")({
   background: "#2C2E33",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: 'none',
   width: "32px",
   height: "32px",
-  borderRadius: '999px',
+  borderRadius: "999px",
   paddding: "0.25rem",
   color: "#CFD4D9",
   "&:hover": {
