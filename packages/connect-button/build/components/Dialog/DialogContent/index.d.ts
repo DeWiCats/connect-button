@@ -1,0 +1,2 @@
+export declare const DialogContent: import("@emotion/styled").StyledComponent<import("@mui/material").DialogActionsProps & import("@mui/system").MUIStyledCommonProps<import("@mui/material").Theme>, {}, {}>;
+//# sourceMappingURL=index.d.ts.map
