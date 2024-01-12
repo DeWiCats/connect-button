@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "build": "cd packages/connect-button && yarn build && lerna run --parallel prebuild && tsc --build",
-    "build-base": "cd packages/base-theme && yarn build && lerna run --parallel prebuild && tsc --build",
     "watch-button": "lerna watch --scope=@dewicats/connect-button -- lerna run prebuild --scope=@dewicats/connect-button --include-dependents",
     "bootstrap": "lerna bootstrap",
     "test": "jest --coverage",

@@ -1,9 +1,9 @@
 import { DialogProps } from "@mui/material";
 import { useCallback, useContext, useEffect } from "react";
-import useSolana from "src/hooks/useSolana";
-import { MagicLinkSecure } from "src/components/MagicLinkSecure";
-import { ConnectWalletContext } from "src/provider/ConnectWallet/context";
-import { Dialog, LoadingDialog } from "src/components/Dialog";
+import useSolana from "../../../hooks/useSolana";
+import { MagicLinkSecure } from "../../../components/MagicLinkSecure";
+import { ConnectWalletContext } from "../../../provider/ConnectWallet/context";
+import { Dialog, LoadingDialog } from "../../../components/Dialog";
 import { LogInContent, LogInHeader } from "../LogIn";
 import { WalletsContent, WalletsHeader } from "../Wallets";
 import { EmailContent, EmailHeader } from "../Email";

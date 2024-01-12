@@ -1,9 +1,8 @@
-import { DialogActionButton, DialogHeader } from "src/components/Dialog";
+import { DialogActionButton, DialogHeader } from "../../../components/Dialog";
 import { Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";
-import { getPublicAddress } from "src/utils/helpers";
-
-const JazzIcon = require("@components/JazzIcon");
+import { getPublicAddress } from "../../../utils/helpers";
+import JazzIcon from "../../JazzIcon";
 
 type ConnectedHeaderProps = {
   handleClose: () => void;

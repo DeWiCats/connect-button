@@ -2,7 +2,7 @@ import {
   DialogActionButton,
   DialogHeader,
   DialogLogoWrapper,
-} from "src/components/Dialog";
+} from "../../../components/Dialog";
 import { Close } from "@mui/icons-material";
 import { Typography, styled } from "@mui/material";
 import Image from "next/image";

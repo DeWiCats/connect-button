@@ -5,11 +5,11 @@ import {
   styled,
 } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
-import { DialogContent } from "src/components/Dialog";
+import { DialogContent } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import DisconnectWalletIcon from "src/assets/DisconnectWalletIcon";
-import CopyAddressIcon from "src/assets/CopyAddressIcon";
-import ChangeWalletIcon from "src/assets/ChangeWalletIcon";
+import DisconnectWalletIcon from "../../../assets/DisconnectWalletIcon";
+import CopyAddressIcon from "../../../assets/CopyAddressIcon";
+import ChangeWalletIcon from "../../../assets/ChangeWalletIcon";
 
 interface ConnectedContentButton {
   changeWallet: () => void;

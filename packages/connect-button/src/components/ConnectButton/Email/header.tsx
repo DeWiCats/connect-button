@@ -2,7 +2,7 @@ import {
   DialogActionButton,
   DialogHeader,
   DialogLogoWrapper,
-} from "src/components/Dialog";
+} from "../../../components/Dialog";
 import { ArrowBackIosNew, Close, MailOutline } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";

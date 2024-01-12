@@ -1,9 +1,9 @@
-import WalletOutlineIcon from "src/assets/WalletOutlineIcon";
+import WalletOutlineIcon from "../../../assets/WalletOutlineIcon";
 import {
   DialogActionButton,
   DialogHeader,
   DialogLogoWrapper,
-} from "src/components/Dialog";
+} from "../../../components/Dialog";
 import { ArrowBackIosNew, Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";

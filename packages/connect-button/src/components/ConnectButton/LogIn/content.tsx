@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography, styled } from "@mui/material";
 import { MailOutline } from "@mui/icons-material";
-import { DialogContent, DialogIconWrapper } from "src/components/Dialog";
+import { DialogContent, DialogIconWrapper } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import WalletOutlineIcon from "src/assets/WalletOutlineIcon";
+import WalletOutlineIcon from "../../../assets/WalletOutlineIcon";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const LogInButton = styled("button")({

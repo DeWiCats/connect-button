@@ -1,11 +1,11 @@
 "use client";
 
-import useSolana from "src/hooks/useSolana";
+import useSolana from "../../../hooks/useSolana";
 import { Button, TextField, styled } from "@mui/material";
 import { ChangeEvent, useCallback, useState } from "react";
-import { DialogContent, DialogErrorMessage } from "src/components/Dialog";
+import { DialogContent, DialogErrorMessage } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import ExclamationSolid from "src/assets/ExclamationSolid";
+import ExclamationSolid from "../../../assets/ExclamationSolid";
 
 const EmailField = styled(TextField)(({ error }: { error: boolean }) => ({
   width: "100%",

@@ -1,4 +1,6 @@
 import { ConnectButton } from "./components/ConnectButton";
-export { ConnectButtonProvider } from "./provider/ConnectButtonProvider";
+import ConnectButtonProvider from "./provider/ConnectButtonProvider";
+
+export { ConnectButtonProvider };
 
 export default ConnectButton;

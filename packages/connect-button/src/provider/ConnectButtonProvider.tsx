@@ -7,13 +7,13 @@ import {
 } from "@solana/wallet-adapter-react";
 import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
 import { Connection } from "@solana/web3.js";
-import { MagicProvider } from "src/provider/MagicProvider/index";
-import ConnectWalletProvider from "src/provider/ConnectWallet/context";
+import { MagicProvider } from "../provider/MagicProvider/index";
+import ConnectWalletProvider from "../provider/ConnectWallet/context";
 import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
-import LanguageProvider from "src/localization/LanguageProvider";
+import LanguageProvider from "../localization/LanguageProvider";
 import { SolanaRPCProvider } from "./SolanaRPCProvider";
 
 const ConnectButtonProvider = ({
@@ -54,4 +54,4 @@ const ConnectButtonProvider = ({
   );
 };
 
-export { ConnectButtonProvider };
+export default ConnectButtonProvider;

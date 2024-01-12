@@ -1,11 +1,11 @@
 "use client";
 
-import useSolana from "src/hooks/useSolana";
+import useSolana from "../../../hooks/useSolana";
 import React, { useCallback } from "react";
-import { DialogContent, DialogErrorMessage } from "src/components/Dialog";
+import { DialogContent, DialogErrorMessage } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import PinInput from "src/components/PinInput";
-import ExclamationSolid from "src/assets/ExclamationSolid";
+import PinInput from "../../../components/PinInput";
+import ExclamationSolid from "../../../assets/ExclamationSolid";
 
 type AuthenticateCodeContentProp = {
   error: boolean;

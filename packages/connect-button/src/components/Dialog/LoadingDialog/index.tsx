@@ -1,5 +1,5 @@
 import { Typography, styled } from "@mui/material";
-import LoadingSpinner from "src/components/LoadingSpinner";
+import LoadingSpinner from "../../../components/LoadingSpinner";
 
 const DialogWrapper = styled("div")({
   display: "flex",

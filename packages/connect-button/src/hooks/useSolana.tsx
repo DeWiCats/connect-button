@@ -19,8 +19,8 @@ import { mplCandyMachine } from "@metaplex-foundation/mpl-candy-machine";
 import { walletAdapterIdentity as umiWalletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
 import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js";
 import { Umi } from "@metaplex-foundation/umi";
-import { useMagic, MagicContextValues } from "src/provider/MagicProvider/index";
-import { useSolanaRPC } from "src/provider/SolanaRPCProvider";
+import { useMagic, MagicContextValues } from "../provider/MagicProvider/index";
+import { useSolanaRPC } from "../provider/SolanaRPCProvider";
 
 type SolanaWalletData = MagicContextValues &
   Omit<WalletContextState, "connect" | "connecting" | "disconnect"> & {

@@ -9,13 +9,13 @@ import {
   useMemo,
   useState,
 } from "react";
-import useSolana from "src/hooks/useSolana";
-import { ConnectWalletContext } from "src/provider/ConnectWallet/context";
+import useSolana from "../../hooks/useSolana";
+import { ConnectWalletContext } from "../../provider/ConnectWallet/context";
 import { useTranslation } from "react-i18next";
 import dynamic from "next/dynamic";
-import Button from "src/components/Button";
+import Button from "../../components/Button";
 import ConnectDialog from "./ConnectDialog";
-import { getPublicAddress } from "src/utils/helpers";
+import { getPublicAddress } from "../../utils/helpers";
 
 const WalletIcon = dynamic(
   () =>

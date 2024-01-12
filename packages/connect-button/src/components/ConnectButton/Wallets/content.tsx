@@ -1,7 +1,7 @@
 "use client";
 
-import { DialogContent } from "src/components/Dialog";
-import useSolana from "src/hooks/useSolana";
+import { DialogContent } from "../../../components/Dialog";
+import useSolana from "../../../hooks/useSolana";
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import { Button, Collapse, List, ListItem } from "@mui/material";
 import type { WalletName } from "@solana/wallet-adapter-base";

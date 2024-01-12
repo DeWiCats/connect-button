@@ -1,14 +1,14 @@
 "use client";
 
-import SparkleIcon from "src/assets/SparkleIcon";
+import SparkleIcon from "../../../assets/SparkleIcon";
 import { ArrowBackIosNew, Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";
-import useSolana from "src/hooks/useSolana";
+import useSolana from "../../../hooks/useSolana";
 import {
   DialogActionButton,
   DialogHeader,
   DialogLogoWrapper,
-} from "src/components/Dialog";
+} from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
 import { useCallback } from "react";
 
