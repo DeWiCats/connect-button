@@ -1,3 +1,5 @@
+"use client";
+
 import ConnectButton from "@dewicats/connect-button";
 
 export default function Home() {

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ConnectButtonProvider } from "@dewicats/connect-button";
-import { clusterApiUrl } from "@solana/web3.js";
+import ProviderWrapper from "../components/ProviderWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,18 +15,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const rpcHost =
-    process.env.NEXT_PUBLIC_REACT_APP_SOLANA_RPC_HOST ??
-    clusterApiUrl("devnet");
-
-  const MAGIC_KEY = process.env.NEXT_PUBLIC_MAGIC_KEY;
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ConnectButtonProvider magicKey={MAGIC_KEY} solanaRpcHost={rpcHost}>
-          {children}
-        </ConnectButtonProvider>
+        <ProviderWrapper>{children}</ProviderWrapper>
       </body>
     </html>
   );

@@ -1,5 +1,3 @@
-"use client";
-
 import { styled } from "@mui/material";
 import { Children, ReactNode } from "react";
 
@@ -33,11 +31,11 @@ const ActionsWrapper = styled("div")(() => ({
   alignItems: "start",
   justifyItems: "center",
   width: "100%",
-  '.start': {
-    justifySelf: 'start',
+  ".start": {
+    justifySelf: "start",
   },
-  '.end': {
-    justifySelf: 'end',
+  ".end": {
+    justifySelf: "end",
   },
 }));
 

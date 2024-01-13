@@ -1,5 +1,3 @@
-"use client";
-
 import { ErrorCode, LoginWithEmailOTPEvents, PromiEvent } from "magic-sdk";
 import { InstanceWithExtensions, SDKBase } from "@magic-sdk/provider";
 import { SolanaExtension } from "@magic-ext/solana";

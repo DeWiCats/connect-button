@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { styled } from "@mui/material";
 import { MuiOtpInput } from "mui-one-time-password-input";

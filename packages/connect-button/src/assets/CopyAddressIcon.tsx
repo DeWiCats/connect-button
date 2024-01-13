@@ -1,5 +1,3 @@
-"use client";
-
 const CopyAddressIcon = () => {
   return (
     <svg

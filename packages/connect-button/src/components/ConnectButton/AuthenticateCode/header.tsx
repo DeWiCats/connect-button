@@ -1,5 +1,3 @@
-"use client";
-
 import SparkleIcon from "../../../assets/SparkleIcon";
 import { ArrowBackIosNew, Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";

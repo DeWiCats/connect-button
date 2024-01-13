@@ -1,5 +1,3 @@
-"use client";
-
 import { Button as MaterialButton, styled } from "@mui/material";
 
 const Button = styled(MaterialButton)(() => ({

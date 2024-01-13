@@ -1,5 +1,3 @@
-"use client";
-
 import React, { createContext, ReactNode } from "react";
 import { useLanguage } from "./i18n";
 
@@ -11,7 +9,7 @@ const initialState = {
 const LanguageContext =
   createContext<ReturnType<typeof useLanguage>>(initialState);
 const { Provider } = LanguageContext;
- 
+
 const LanguageProvider = ({ children }: { children: ReactNode }) => {
   return <Provider value={useLanguage()}>{children}</Provider>;
 };

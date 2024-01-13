@@ -1,5 +1,3 @@
-"use client";
-
 import React, { createContext, useReducer, ReactNode, useMemo } from "react";
 import reducer, { WalletDialogState } from "./reducer";
 

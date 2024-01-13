@@ -1,5 +1,3 @@
-"use client";
-
 import useSolana from "../../../hooks/useSolana";
 import React, { useCallback } from "react";
 import { DialogContent, DialogErrorMessage } from "../../../components/Dialog";

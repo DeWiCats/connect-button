@@ -1,5 +1,3 @@
-"use client";
-
 export type WalletDialogState =
   | "logIn"
   | "wallets"
@@ -11,7 +9,7 @@ export type Action = { type: "SET_DIALOG_STATE"; value: WalletDialogState };
 
 const reducer = (
   state: WalletDialogState,
-  action: Action,
+  action: Action
 ): WalletDialogState => {
   switch (action.type) {
     case "SET_DIALOG_STATE":

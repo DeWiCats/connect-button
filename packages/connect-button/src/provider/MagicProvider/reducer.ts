@@ -1,5 +1,3 @@
-"use client";
-
 import { State, Action } from "./types";
 
 export function magicReducer(state: State, action: Action): State {

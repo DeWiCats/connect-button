@@ -1,5 +1,3 @@
-"use client";
-
 import React, {
   useMemo,
   useCallback,
@@ -176,4 +174,4 @@ export const MagicProvider = ({
       {children}
     </MagicContext.Provider>
   );
-}
+};

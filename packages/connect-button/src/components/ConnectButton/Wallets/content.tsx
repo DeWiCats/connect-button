@@ -1,5 +1,3 @@
-"use client";
-
 import { DialogContent } from "../../../components/Dialog";
 import useSolana from "../../../hooks/useSolana";
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";

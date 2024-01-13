@@ -1,5 +1,3 @@
-"use client";
-
 import useSolana from "../../../hooks/useSolana";
 import { Button, TextField, styled } from "@mui/material";
 import { ChangeEvent, useCallback, useState } from "react";
