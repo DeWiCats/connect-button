@@ -1,10 +1,4 @@
 import { Box, styled } from "@mui/material";
-// import {
-//   DewiColorsBlue4,
-//   DewiRadiusRounded,
-//   DewiSpacing5,
-// } from "@styles/tokens/dist/js/tokens";
-// import { hslStringToRgba } from "@utils/helpers";
 import Image from "next/image";
 
 const Centered = styled(Box)({
@@ -17,12 +11,9 @@ const LogoCircle = styled("div")({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  // borderRadius: DewiRadiusRounded,
   overflow: "hidden",
   height: "fit-content",
   width: "fit-content",
-  // padding: DewiSpacing5,
-  // backgroundColor: hslStringToRgba(DewiColorsBlue4, 0.2),
   "& > img": {
     "@keyframes rotate": {
       to: {

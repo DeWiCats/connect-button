@@ -13,7 +13,6 @@ import {
 import { TransitionProps } from "@mui/material/transitions";
 import { FC, ReactNode, forwardRef } from "react";
 
-// TODO: fix colors and dewi tokens
 export const CustomDialog = styled(MaterialDialog)({
   "& .MuiBackdrop-root": {
     backdropFilter: "blur(5px)",
@@ -66,7 +65,7 @@ const Transition = forwardRef(function Transition(
 
 type DewiDialogProps = {
   children: ReactNode;
-  transitionProps?: TransitionProps; // Include TransitionProps in your custom type
+  transitionProps?: TransitionProps;
 } & DialogProps;
 
 export const Dialog: FC<DewiDialogProps> = ({ transitionProps, ...props }) => {
@@ -75,8 +74,8 @@ export const Dialog: FC<DewiDialogProps> = ({ transitionProps, ...props }) => {
       {...props}
       TransitionComponent={Transition}
       TransitionProps={{
-        timeout: 500, // Set the duration of the slide-in animation (in milliseconds)
-        ...transitionProps, // Spread additional TransitionProps here
+        timeout: 500, 
+        ...transitionProps, 
       }}
     >
       {props.children}
