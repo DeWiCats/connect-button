@@ -1,7 +1,12 @@
 {
   "name": "@dewicats/connect-button",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
   "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "clean": "rimraf build",
     "build": "yarn run clean && tsc",
@@ -51,5 +56,5 @@
   "devDependencies": {
     "copyfiles": "^2.4.1"
   },
-  "gitHead": "d997db3ec0592f2961ae2c08307d55c12c8f58b4"
+  "gitHead": "e3393e27b6820928bcc94363db6c89a36109b083"
 }
