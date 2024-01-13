@@ -1,29 +1,17 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es6",
     "module": "commonjs",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "build",
-    "paths": {
-      "@MagicProvider/*": ["src/provider/MagicProvider/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@components/*": ["src/components/*"],
-      "@context/*": ["context/*"],
-      "@assets/*": ["src/assets/*"],
-      "@helpers": ["src/utils/helpers"],
-      "@provider": ["src/provider/*"],
-      "@utils": ["src/utils/*"],
-      "@localization": ["src/localization/*"]
-    },
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-
     "moduleResolution": "node",
     "baseUrl": ".",
     "esModuleInterop": true

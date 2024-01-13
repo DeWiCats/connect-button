@@ -20,7 +20,7 @@ import { walletAdapterIdentity as umiWalletAdapterIdentity } from "@metaplex-fou
 import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js";
 import { Umi } from "@metaplex-foundation/umi";
 import { useMagic, MagicContextValues } from "../provider/MagicProvider/index";
-import { useSolanaRPC } from "../provider/SolanaRPCProvider";
+import useSolanaRPC from "../provider/SolanaProvider/useSolanaRPC";
 
 type SolanaWalletData = MagicContextValues &
   Omit<WalletContextState, "connect" | "connecting" | "disconnect"> & {

@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# build
+packages/connect-button/build
+packages/demo/node_modules
+packages/demo/.next

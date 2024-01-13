@@ -10,7 +10,8 @@
     "lint": "next lint"
   },
   "contributors": [
-    "Marcial Cabrera <marcialandres06@gmail.com>"
+    "Marcial Cabrera <marcialandres06@gmail.com>",
+    "Luis Perrone <peronif5@gmail.com>"
   ],
   "dependencies": {
     "@dewicats/connect-button": "^0.1.0",

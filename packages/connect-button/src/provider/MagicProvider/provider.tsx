@@ -36,11 +36,11 @@ type MagicProviderProps = {
   children: ReactNode;
 };
 
-export function MagicProvider({
+export const MagicProvider = ({
   solanaRpcHost,
   magicKey,
   children,
-}: MagicProviderProps) {
+}: MagicProviderProps) => {
   const magic = useMemo(
     () =>
       typeof window !== "undefined" &&

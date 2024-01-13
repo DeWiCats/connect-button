@@ -1,23 +1,25 @@
-import React, { useEffect, useRef } from "react";
-// @ts-ignore
+import React, { ElementRef, useEffect, useRef } from "react";
 import jazzicon from "@metamask/jazzicon";
 
-// #ts-ignore
-const JazzIcon = ({ diameter, className, publicAddress }: any) => {
-  const ref = useRef();
+type JazzIconProps = {
+  diameter: number;
+  className: string;
+  publicAddress: string;
+};
+
+const JazzIcon = ({ diameter, className, publicAddress }: JazzIconProps) => {
+  const ref = useRef<ElementRef<"div">>(null);
 
   useEffect(() => {
     const icon = jazzicon(diameter, publicAddress);
 
     if (ref.current) {
-      // @ts-ignore
       ref.current.innerHTML = "";
-      // @ts-ignore
       ref.current.appendChild(icon);
     }
   }, [diameter]);
 
-  return <div className={className} ref={ref as any} />;
+  return <div className={className} ref={ref} />;
 };
 
 export default JazzIcon;

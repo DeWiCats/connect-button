@@ -8,7 +8,8 @@
     "prebuild": "tsc"
   },
   "contributors": [
-    "Marcial Cabrera <marcialandres06@gmail.com>"
+    "Marcial Cabrera <marcialandres06@gmail.com>",
+    "Luis Perrone <peronif5@gmail.com>"
   ],
   "main": "build/index.js",
   "module": "build/index.js",
