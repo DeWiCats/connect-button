@@ -1,6 +1,6 @@
 {
   "name": "@dewicats/connect-button",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
@@ -50,5 +50,6 @@
   },
   "devDependencies": {
     "copyfiles": "^2.4.1"
-  }
+  },
+  "gitHead": "d997db3ec0592f2961ae2c08307d55c12c8f58b4"
 }
