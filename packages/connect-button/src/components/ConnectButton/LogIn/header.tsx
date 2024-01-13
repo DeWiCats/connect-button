@@ -5,8 +5,8 @@ import {
 } from "../../../components/Dialog";
 import { Close } from "@mui/icons-material";
 import { Typography, styled } from "@mui/material";
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import DeWiLogo from "../../../assets/dewi-logo-cut.png";
 
 const LogoWrapper = styled(DialogLogoWrapper)({
   alignItems: "flex-end",
@@ -27,12 +27,7 @@ export const LogInHeader = ({ handleClose }: LogInHeaderProps) => {
     <DialogHeader>
       <DialogHeader.Actions>
         <LogoWrapper>
-          <Image
-            alt="dewi-logo"
-            src="/assets/dewi-logo-cut.png"
-            width={59}
-            height={59}
-          />
+          <img alt="dewi-logo" src={DeWiLogo.src} width={59} height={59} />
         </LogoWrapper>
         <DialogActionButton
           className="end"

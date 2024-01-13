@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf build",
     "build": "yarn run clean && tsc",
-    "prebuild": "tsc"
+    "prebuild": "tsc && copyfiles -u -f src/assets/*.png build/assets"
   },
   "contributors": [
     "Marcial Cabrera <marcialandres06@gmail.com>",
@@ -47,5 +47,8 @@
     "react-async-hook": "^4.0.0",
     "react-dom": "^18",
     "react-i18next": "^14.0.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1"
   }
 }

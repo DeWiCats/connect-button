@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "es2020",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -21,7 +21,7 @@
     // to use import instead of require(), but its not worth the tradeoff of restructuring the build (for now).
     // "resolveJsonModule": true,
   },
-  "include": ["src/**/*", "src/hooks/useSolana.tsx"],
+  "include": ["src/**/*"],
   "exclude": ["__tests__", "src/**/*.spec.ts", "src/**/*.js"],
   "jsdoc": {
     "out": "support/jsdoc",
