@@ -1,5 +1,4 @@
 import { Box, styled } from "@mui/material";
-import Image from "next/image";
 import Spinner from "../../assets/spinner.png";
 
 const Centered = styled(Box)({
@@ -38,7 +37,7 @@ export default function LoadingSpinner({
   return (
     <Centered>
       <LogoCircle>
-        <Image
+        <img
           alt="loading-spinner"
           src={Spinner.src}
           width={size}

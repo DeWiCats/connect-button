@@ -37,21 +37,25 @@ const ChevronRIcon = styled(ChevronRightIcon)({
 type LogInContentProps = {
   handleWalletLogIn: () => void;
   handleMagicLinkLogIn: () => void;
+  disableMagicLink?: boolean;
 };
 
 export const LogInContent = ({
   handleWalletLogIn,
   handleMagicLinkLogIn,
+  disableMagicLink = false,
 }: LogInContentProps) => {
   const { t } = useTranslation();
 
   return (
     <DialogContent>
-      <LogInButton onClick={handleMagicLinkLogIn}>
-        <DialogIconWrapper Icon={MailOutline} />
-        <Typography>{t("connectWallet.login.email")}</Typography>
-        <ChevronRIcon />
-      </LogInButton>
+      {!disableMagicLink && (
+        <LogInButton onClick={handleMagicLinkLogIn}>
+          <DialogIconWrapper Icon={MailOutline} />
+          <Typography>{t("connectWallet.login.email")}</Typography>
+          <ChevronRIcon />
+        </LogInButton>
+      )}
       <LogInButton onClick={handleWalletLogIn}>
         <DialogIconWrapper Icon={WalletOutlineIcon} />
         <Typography>{t("connectWallet.login.wallet")}</Typography>

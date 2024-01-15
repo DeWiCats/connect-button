@@ -5,7 +5,7 @@ import { Button, Collapse, List, ListItem } from "@mui/material";
 import type { WalletName } from "@solana/wallet-adapter-base";
 import { WalletReadyState } from "@solana/wallet-adapter-base";
 import { type Wallet } from "@solana/wallet-adapter-react";
-import type { FC, SyntheticEvent } from "react";
+import type { SyntheticEvent } from "react";
 import React, { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { WalletListItem } from "./listItem";
@@ -15,10 +15,10 @@ type WalletsContentProps = {
   handleClose: () => void;
 };
 
-export const WalletsContent: FC<WalletsContentProps> = ({
+export const WalletsContent = ({
   featuredWallets = 3,
   handleClose,
-}) => {
+}: WalletsContentProps) => {
   const { t } = useTranslation();
   const { wallets, select } = useSolana();
   const [expanded, setExpanded] = useState(false);

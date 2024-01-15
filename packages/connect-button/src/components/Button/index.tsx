@@ -1,6 +1,10 @@
-import { Button as MaterialButton, styled } from "@mui/material";
+import {
+  Button as MaterialButton,
+  IconButton as MaterialIconButton,
+  styled,
+} from "@mui/material";
 
-const Button = styled(MaterialButton)(() => ({
+export const Button = styled(MaterialButton)({
   textTransform: "none",
   color: "hsl(220, 9%, 7%) !important",
   minWidth: "unset",
@@ -12,6 +16,7 @@ const Button = styled(MaterialButton)(() => ({
   background: "hsl(210, 17%, 95%) !important",
   border: "1px solid hsl(210, 12%, 83%)",
   borderRadius: "62rem",
+  // ...(removeIconMargin && { "& .MuiButton-startIcon": { margin: 0 } }),
   "&:disabled": {
     opacity: 0.6,
   },
@@ -28,6 +33,19 @@ const Button = styled(MaterialButton)(() => ({
     color: "hsl(214, 9%, 15%) !important",
     outline: "4px solid hsl(214, 61%, 53%)",
   },
-}));
+});
 
-export default Button;
+export const IconButton = styled(MaterialIconButton)({
+  background: "#212121",
+  color: "#D9D9D9",
+  border: "1px solid #414141",
+  "&:disabled": {
+    opacity: 0.6,
+  },
+  "&:hover": {
+    background: "#212121",
+  },
+  "&:focus": {
+    outline: "2px solid hsl(214, 61%, 53%)",
+  },
+});

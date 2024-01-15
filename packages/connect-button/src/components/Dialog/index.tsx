@@ -11,7 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
-import { FC, ReactNode, forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
 
 export const CustomDialog = styled(MaterialDialog)({
   "& .MuiBackdrop-root": {
@@ -57,8 +57,8 @@ export const CustomDialog = styled(MaterialDialog)({
 });
 
 const Transition = forwardRef(function Transition(
-  props: TransitionProps & { children: React.ReactElement<any, any>; },
-  ref: React.Ref<unknown>,
+  props: TransitionProps & { children: React.ReactElement<any, any> },
+  ref: React.Ref<unknown>
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -68,14 +68,14 @@ type DewiDialogProps = {
   transitionProps?: TransitionProps;
 } & DialogProps;
 
-export const Dialog: FC<DewiDialogProps> = ({ transitionProps, ...props }) => {
+export const Dialog = ({ transitionProps, ...props }: DewiDialogProps) => {
   return (
     <CustomDialog
       {...props}
       TransitionComponent={Transition}
       TransitionProps={{
-        timeout: 500, 
-        ...transitionProps, 
+        timeout: 500,
+        ...transitionProps,
       }}
     >
       {props.children}

@@ -25,7 +25,7 @@ const Title = styled("div")({
   color: "hsl(210, 17%, 98%)",
 });
 
-const ActionsWrapper = styled("div")(() => ({
+const ActionsWrapper = styled("div")({
   display: "grid",
   gridTemplateColumns: "1fr 1fr 1fr",
   alignItems: "start",
@@ -37,7 +37,7 @@ const ActionsWrapper = styled("div")(() => ({
   ".end": {
     justifySelf: "end",
   },
-}));
+});
 
 const Actions = ({ children }: DialogHeaderProps) => {
   const count = Children.count(children);

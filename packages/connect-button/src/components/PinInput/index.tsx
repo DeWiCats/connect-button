@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "@mui/material";
 import { MuiOtpInput } from "mui-one-time-password-input";
 
-const Input = styled(MuiOtpInput)(({ error }: { error: boolean }) => ({
+const Input = styled(MuiOtpInput)(({ error }: { error?: boolean }) => ({
   gap: "0.25rem",
   "& .MuiOtpInput-TextField-3": {
     marginRight: "1.25rem",

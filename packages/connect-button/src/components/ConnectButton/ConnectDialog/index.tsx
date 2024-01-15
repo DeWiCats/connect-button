@@ -15,9 +15,14 @@ import {
 
 type ConnectDialogProps = {
   handleClose: () => void;
+  disableMagicLink: boolean;
 } & DialogProps;
 
-const ConnectDialog = ({ handleClose, ...rest }: ConnectDialogProps) => {
+const ConnectDialog = ({
+  handleClose,
+  disableMagicLink,
+  ...rest
+}: ConnectDialogProps) => {
   const {
     connecting,
     publicAddress,
@@ -119,6 +124,7 @@ const ConnectDialog = ({ handleClose, ...rest }: ConnectDialogProps) => {
         <LogInContent
           handleWalletLogIn={() => updateWalletDialogState("wallets")}
           handleMagicLinkLogIn={() => updateWalletDialogState("email")}
+          disableMagicLink={disableMagicLink}
         />
       ),
       wallets: <WalletsContent handleClose={handleClose} />,
@@ -143,7 +149,7 @@ const ConnectDialog = ({ handleClose, ...rest }: ConnectDialogProps) => {
   };
 
   const dialogHeights = {
-    logIn: "17.875rem",
+    logIn: disableMagicLink ? "12.75rem" : "17.875rem",
     wallets: "16rem",
     email: "16.8rem",
     authenticationCode: "15.6rem",

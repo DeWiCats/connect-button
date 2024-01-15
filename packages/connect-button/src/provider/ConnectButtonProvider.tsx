@@ -20,7 +20,7 @@ const ConnectButtonProvider = ({
   children,
 }: {
   solanaRpcHost: string;
-  magicKey: string;
+  magicKey?: string;
   children: ReactNode;
 }) => {
   const connection = useMemo(
@@ -33,19 +33,29 @@ const ConnectButtonProvider = ({
     []
   );
 
+  const renderChildrenProviders = () => {
+    return (
+      <WalletDialogProvider>
+        <ConnectWalletProvider>
+          <SolanaRPCProvider solanaRpcHost={solanaRpcHost}>
+            {children}
+          </SolanaRPCProvider>
+        </ConnectWalletProvider>
+      </WalletDialogProvider>
+    );
+  };
+
   return (
     <LanguageProvider>
       <ConnectionProvider endpoint={connection.rpcEndpoint}>
         <WalletProvider wallets={wallets} autoConnect>
-          <MagicProvider magicKey={magicKey} solanaRpcHost={solanaRpcHost}>
-            <WalletDialogProvider>
-              <ConnectWalletProvider>
-                <SolanaRPCProvider solanaRpcHost={solanaRpcHost}>
-                  {children}
-                </SolanaRPCProvider>
-              </ConnectWalletProvider>
-            </WalletDialogProvider>
-          </MagicProvider>
+          {magicKey ? (
+            <MagicProvider magicKey={magicKey} solanaRpcHost={solanaRpcHost}>
+              {renderChildrenProviders()}
+            </MagicProvider>
+          ) : (
+            renderChildrenProviders()
+          )}
         </WalletProvider>
       </ConnectionProvider>
     </LanguageProvider>

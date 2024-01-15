@@ -1,33 +1,31 @@
 import { ButtonProps } from "@mui/material";
-import {
-  FC,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import useSolana from "../../hooks/useSolana";
 import { ConnectWalletContext } from "../../provider/ConnectWallet/context";
 import { useTranslation } from "react-i18next";
-import dynamic from "next/dynamic";
-import Button from "../../components/Button";
+import { Button, IconButton } from "../../components/Button";
 import ConnectDialog from "./ConnectDialog";
 import { getPublicAddress } from "../../utils/helpers";
+import DragHandleIcon from "@mui/icons-material/DragHandle";
+import { WalletIcon } from "@solana/wallet-adapter-material-ui";
+import useIsSmallScreen from "../../hooks/useIsSmallScreen";
 
-const WalletIcon = dynamic(
-  () =>
-    import("@solana/wallet-adapter-material-ui").then(
-      (module) => module.WalletIcon
-    ),
-  { ssr: false }
-);
+type ConnectButtonProps = {
+  compresedView?: boolean;
+  disableMagicLink?: boolean;
+} & ButtonProps;
 
-const ConnectButton: FC<ButtonProps> = ({ ...rest }) => {
+const ConnectButton = ({
+  compresedView = false,
+  disableMagicLink = false,
+  ...rest
+}: ConnectButtonProps) => {
   const { publicAddress, wallet, status, restartSession } = useSolana();
   const { t } = useTranslation();
   const { walletDialogState, updateWalletDialogState } =
     useContext(ConnectWalletContext);
+
+  const isSmallScreen = useIsSmallScreen(640);
 
   const [open, setOpen] = useState(false);
 
@@ -81,17 +79,33 @@ const ConnectButton: FC<ButtonProps> = ({ ...rest }) => {
 
   return (
     <>
-      <Button
-        startIcon={<WalletIcon wallet={wallet} />}
-        onClick={handleOpenDialog}
-        aria-haspopup="true"
-        size="large"
-        id="connect-wallet-button"
-        {...rest}
-      >
-        {content}
-      </Button>
-      <ConnectDialog open={open} handleClose={handleClose} />
+      {isSmallScreen && compresedView ? (
+        <IconButton
+          id="connect-wallet-button"
+          onClick={handleOpenDialog}
+          aria-haspopup="true"
+          size="medium"
+          {...rest}
+        >
+          <DragHandleIcon fontSize="inherit" />
+        </IconButton>
+      ) : (
+        <Button
+          startIcon={<WalletIcon wallet={wallet} />}
+          onClick={handleOpenDialog}
+          aria-haspopup="true"
+          size="large"
+          id="connect-wallet-button"
+          {...rest}
+        >
+          {content}
+        </Button>
+      )}
+      <ConnectDialog
+        open={open}
+        handleClose={handleClose}
+        disableMagicLink={disableMagicLink}
+      />
     </>
   );
 };
