@@ -1,6 +1,6 @@
 import useSolana from "../../../hooks/useSolana";
 import { Button, TextField, styled } from "@mui/material";
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useCallback, useState } from "react";
 import { DialogContent, DialogErrorMessage } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
 import ExclamationSolid from "../../../assets/ExclamationSolid";
@@ -42,7 +42,7 @@ const CustomConnectButton = styled(Button)({
 });
 
 export const EmailContent = () => {
-  const { login, status } = useSolana();
+  const { login, magicAuthenticationStatus } = useSolana();
   const { t } = useTranslation();
 
   const [email, setEmail] = useState<string>();
@@ -80,7 +80,7 @@ export const EmailContent = () => {
   }, [email, validateEmailFormat]);
 
   const handleKeyPress = useCallback(
-    (event: any) => {
+    (event: KeyboardEvent<HTMLDivElement>) => {
       if (event.key === "Enter") {
         if (!email) return;
 
@@ -107,7 +107,7 @@ export const EmailContent = () => {
         error={!isEmailValid}
         onKeyDown={handleKeyPress}
       />
-      {(!isEmailValid || status === "errored") && (
+      {(!isEmailValid || magicAuthenticationStatus === "errored") && (
         <DialogErrorMessage
           Icon={ExclamationSolid}
           message={t("connectWallet.email.error")}

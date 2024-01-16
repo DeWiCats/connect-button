@@ -11,7 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
-import { ReactNode, forwardRef } from "react";
+import { ReactElement, ReactNode, Ref, forwardRef } from "react";
 
 export const CustomDialog = styled(MaterialDialog)({
   "& .MuiBackdrop-root": {
@@ -57,8 +57,8 @@ export const CustomDialog = styled(MaterialDialog)({
 });
 
 const Transition = forwardRef(function Transition(
-  props: TransitionProps & { children: React.ReactElement<any, any> },
-  ref: React.Ref<unknown>
+  props: TransitionProps & { children: ReactElement },
+  ref: Ref<unknown>
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });

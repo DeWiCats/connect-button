@@ -11,7 +11,7 @@ export interface UserMetadata {
   publicAddress: string | null;
 }
 
-export type AuthenticationStatus =
+export type MagicAuthenticationStatus =
   | "unauthenticated"
   | "authenticated"
   | "pending"
@@ -25,7 +25,7 @@ export type MagicContextValues = {
   logout: () => Promise<void>;
   handleLoginCode: (code: string) => void;
   restartSession: () => void;
-  status: AuthenticationStatus;
+  magicAuthenticationStatus: MagicAuthenticationStatus;
   metadata: UserMetadata | null;
   error: ErrorCode | null;
   magic?: InstanceWithExtensions<SDKBase, SolanaExtension[]> | false;
@@ -35,7 +35,7 @@ export type State = {
   didToken: DIDToken | null;
   metadata: UserMetadata | null;
   error: ErrorCode | null;
-  status: AuthenticationStatus;
+  status: MagicAuthenticationStatus;
 };
 
 export type Action =

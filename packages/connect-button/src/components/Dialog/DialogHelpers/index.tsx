@@ -1,5 +1,5 @@
 import { styled } from "@mui/material";
-import { CSSProperties } from "react";
+import { CSSProperties, ComponentType } from "react";
 
 export const DialogActionButton = styled("button")({
   background: "#2C2E33",
@@ -34,7 +34,7 @@ const IconWrapper = styled("div")({
 });
 
 type CircleIconProps = {
-  Icon: any; // TODO: replace any with correct type
+  Icon: ComponentType;
   style?: CSSProperties;
 };
 

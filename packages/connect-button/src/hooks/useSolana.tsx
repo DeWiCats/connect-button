@@ -135,19 +135,23 @@ const useSolana = (): SolanaWalletData => {
       return publicKey?.toBase58();
     }
 
-    return metadata?.publicAddress as string;
+    if (metadata && metadata?.publicAddress) {
+      return metadata?.publicAddress;
+    }
+
+    return "";
   }, [MagicWallet, SolanaWallet]);
 
   const getLoading = useCallback(() => {
     const { connecting } = SolanaWallet;
-    const { status } = MagicWallet;
-    return connecting || status === "pending";
+    const { magicAuthenticationStatus } = MagicWallet;
+    return connecting || magicAuthenticationStatus === "pending";
   }, [MagicWallet, SolanaWallet]);
 
   const getConnected = useCallback(() => {
     const { connected } = SolanaWallet;
-    const { status } = MagicWallet;
-    return connected || status === "authenticated";
+    const { magicAuthenticationStatus } = MagicWallet;
+    return connected || magicAuthenticationStatus === "authenticated";
   }, [MagicWallet, SolanaWallet]);
 
   const umi = useMemo(() => {

@@ -1,5 +1,5 @@
 import { DialogProps } from "@mui/material";
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { Fragment, useCallback, useContext, useEffect } from "react";
 import useSolana from "../../../hooks/useSolana";
 import { MagicLinkSecure } from "../../../components/MagicLinkSecure";
 import { ConnectWalletContext } from "../../../provider/ConnectWallet/context";
@@ -28,7 +28,7 @@ const ConnectDialog = ({
     publicAddress,
     wallet,
     disconnect,
-    status,
+    magicAuthenticationStatus,
     cancel,
     restartSession,
   } = useSolana();
@@ -43,34 +43,37 @@ const ConnectDialog = ({
 
     if (
       walletDialogState !== "authenticationCode" &&
-      (status === "authenticationCode" ||
-        status === "invalid-code" ||
-        status === "pending")
+      (magicAuthenticationStatus === "authenticationCode" ||
+        magicAuthenticationStatus === "invalid-code" ||
+        magicAuthenticationStatus === "pending")
     ) {
       updateWalletDialogState("authenticationCode");
     }
 
-    if (status === "errored" && walletDialogState === "authenticationCode") {
+    if (
+      magicAuthenticationStatus === "errored" &&
+      walletDialogState === "authenticationCode"
+    ) {
       updateWalletDialogState("email");
     }
-  }, [status]);
+  }, [magicAuthenticationStatus]);
 
   const restartMagicLinkStatus = useCallback(() => {
-    if (status === "errored") restartSession();
-  }, [restartSession, status]);
+    if (magicAuthenticationStatus === "errored") restartSession();
+  }, [restartSession, magicAuthenticationStatus]);
 
   const handleDialogClosed = useCallback(() => {
     const isConnected = !!wallet || !!publicAddress;
     if (
       walletDialogState !== "authenticationCode" ||
-      status === "unauthenticated"
+      magicAuthenticationStatus === "unauthenticated"
     ) {
       restartMagicLinkStatus();
       updateWalletDialogState(isConnected ? "connected" : "logIn");
     }
   }, [
     walletDialogState,
-    status,
+    magicAuthenticationStatus,
     restartMagicLinkStatus,
     updateWalletDialogState,
     wallet,
@@ -85,7 +88,9 @@ const ConnectDialog = ({
           handleClose={handleClose}
           onBack={() => {
             updateWalletDialogState(
-              !!wallet || !!publicAddress || status === "authenticated"
+              !!wallet ||
+                !!publicAddress ||
+                magicAuthenticationStatus === "authenticated"
                 ? "connected"
                 : "logIn"
             );
@@ -130,7 +135,9 @@ const ConnectDialog = ({
       wallets: <WalletsContent handleClose={handleClose} />,
       email: <EmailContent />,
       authenticationCode: (
-        <AuthenticateCodeContent error={status === "invalid-code"} />
+        <AuthenticateCodeContent
+          error={magicAuthenticationStatus === "invalid-code"}
+        />
       ),
       connected: (
         <ConnectedContent
@@ -140,7 +147,7 @@ const ConnectDialog = ({
           disconnect={async () => {
             await disconnect();
           }}
-          magicLogin={status === "authenticated"}
+          magicLogin={magicAuthenticationStatus === "authenticated"}
         />
       ),
     };
@@ -177,7 +184,7 @@ const ConnectDialog = ({
       {connecting ? (
         <LoadingDialog />
       ) : (
-        <React.Fragment>
+        <Fragment>
           {" "}
           {getDialogHeader()}
           {getDialogContent()}
@@ -187,7 +194,7 @@ const ConnectDialog = ({
               <MagicLinkSecure />
             )
           }
-        </React.Fragment>
+        </Fragment>
       )}
     </Dialog>
   );

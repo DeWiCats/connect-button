@@ -1,4 +1,5 @@
 import { Typography, styled } from "@mui/material";
+import { ComponentType } from "react";
 
 const ErrorMessage = styled("div")({
   display: "flex",
@@ -14,7 +15,7 @@ const ErrorMessage = styled("div")({
 });
 
 type DialogErrorMessageProps = {
-  Icon: any;
+  Icon: ComponentType;
   message: string;
 };
 

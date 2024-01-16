@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 import { Button, IconButton } from "../../components/Button";
 import ConnectDialog from "./ConnectDialog";
 import { getPublicAddress } from "../../utils/helpers";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+import WalletOutlineIcon from "../../assets/WalletOutlineIcon";
 import { WalletIcon } from "@solana/wallet-adapter-material-ui";
 import useIsSmallScreen from "../../hooks/useIsSmallScreen";
 
@@ -27,7 +27,8 @@ const ConnectButton = ({
   disableMagicLink = false,
   ...rest
 }: ConnectButtonProps) => {
-  const { publicAddress, wallet, status, restartSession } = useSolana();
+  const { publicAddress, wallet, magicAuthenticationStatus, restartSession } =
+    useSolana();
   const { t } = useTranslation();
   const { walletDialogState, updateWalletDialogState } =
     useContext(ConnectWalletContext);
@@ -42,13 +43,13 @@ const ConnectButton = ({
 
   useEffect(() => {
     const isConnected = !!wallet || !!publicAddress;
-    if (status === "authenticated") {
+    if (magicAuthenticationStatus === "authenticated") {
       handleClose();
       if (!isConnected || walletDialogState !== "connected") {
         updateWalletDialogState("connected");
       }
     } else if (
-      status === "errored" &&
+      magicAuthenticationStatus === "errored" &&
       walletDialogState === "authenticationCode"
     ) {
       updateWalletDialogState("email");
@@ -57,10 +58,10 @@ const ConnectButton = ({
         "authenticationCode",
         "invalid-code",
         "pending",
-      ].includes(status);
+      ].includes(magicAuthenticationStatus);
       const shouldUpdateState =
         walletDialogState !== "authenticationCode" &&
-        (isAuthCodeRelated || status === "unauthenticated");
+        (isAuthCodeRelated || magicAuthenticationStatus === "unauthenticated");
 
       if (shouldUpdateState) {
         restartMagicLinkStatus();
@@ -81,8 +82,8 @@ const ConnectButton = ({
   };
 
   const restartMagicLinkStatus = useCallback(() => {
-    if (status === "errored") restartSession();
-  }, [restartSession, status]);
+    if (magicAuthenticationStatus === "errored") restartSession();
+  }, [restartSession, magicAuthenticationStatus]);
 
   return (
     <Fragment>
@@ -94,7 +95,7 @@ const ConnectButton = ({
           size="medium"
           {...rest}
         >
-          <DragHandleIcon fontSize="inherit" />
+          <WalletOutlineIcon />
         </IconButton>
       ) : (
         <Button

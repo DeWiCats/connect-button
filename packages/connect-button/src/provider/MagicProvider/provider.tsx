@@ -19,7 +19,7 @@ const defaultContextValues = {
   refresh: async () => {},
   handleLoginCode: () => {},
   restartSession: () => {},
-  status: "unauthenticated",
+  magicAuthenticationStatus: "unauthenticated",
   metadata: { issuer: null, email: null, publicAddress: null },
   error: null,
   magic: undefined,
