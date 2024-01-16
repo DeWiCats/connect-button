@@ -68,6 +68,32 @@ export default function Home() {
 }
 ```
 
+## Attributes
+
+### Connect Button
+|Attribute|Type|Description|
+|:--|:--|:--|
+|compresedView|boolean|Turn on compresed view for small screens|
+|disableMagicLink|boolean|Disable Magic Link login option|
+
+### Connect Button Provider
+|Attribute|Type|Description|
+|:--|:--|:--|
+|solanaRpcHost|string|Solana RPC host key|
+|magicKey|string|Magic Link publishable API key|
+
+### useSolana
+|Attribute|Type|Description|
+|:--|:--|:--|
+|publicAddress|string|Solana public address when connected|
+|connecting|boolean|Loading indicator when connecting|
+|connected|boolean|True when successful connect|
+|magicAuthenticationStatus|MagicAuthenticationStatus*|Current status of Magic Link connection|
+
+*MagicAuthenticationStatus = "unauthenticated" | "authenticated" | "pending" | "errored" | "invalid-code" | "authenticationCode";
+
+
+
 ## Features
 - Easy integration with Next.js applications.
 - Supports Solana wallets like Phantom and Solflare.
