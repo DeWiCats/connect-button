@@ -38,6 +38,8 @@ next-env.d.ts
 # build
 packages/connect-button/node_modules
 packages/connect-button/build
+packages/connect-button/dist
+packages/connect-button/types
 packages/demo/node_modules
 packages/demo/.next
 packages/demo/.env

@@ -3,25 +3,29 @@
   "version": "0.0.3",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "clean": "rimraf build",
-    "build": "yarn run clean && tsc",
-    "prebuild": "tsc && copyfiles -u -f src/assets/*.png build/assets"
+    "clean": "rimraf dist",
+    "build": "yarn run clean && yarn run rollup -c",
+    "prebuild": "yarn run rollup -c && copyfiles -u -f src/assets/*.png dist/assets"
   },
   "contributors": [
     "Marcial Cabrera <marcialandres06@gmail.com>",
     "Luis Perrone <peronif5@gmail.com>"
   ],
-  "main": "build/index.js",
-  "module": "build/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "files": [
-    "build"
+    "dist"
   ],
+  "types": "dist/index.d.ts",
   "dependencies": {
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-react": "^7.23.3",
     "@coral-xyz/anchor": "^0.29.0",
     "@magic-ext/solana": "^13.3.0",
     "@metamask/jazzicon": "^2.0.0",
@@ -33,12 +37,15 @@
     "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.3",
     "@particle-network/auth": "^0.5.5",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-replace": "^5.0.5",
     "@solana/wallet-adapter-base": "^0.9.22",
     "@solana/wallet-adapter-material-ui": "^0.16.30",
     "@solana/wallet-adapter-react": "^0.15.19",
     "@solana/wallet-adapter-react-ui": "^0.9.31",
     "@solana/wallet-adapter-wallets": "0.19.18",
     "@solana/web3.js": "^1.75.0",
+    "acorn-jsx": "^5.3.2",
     "i18next": "^23.7.16",
     "magic-sdk": "^17.3.0",
     "mui-one-time-password-input": "^2.0.1",
@@ -46,10 +53,17 @@
     "react": "^18",
     "react-async-hook": "^4.0.0",
     "react-dom": "^18",
-    "react-i18next": "^14.0.0"
+    "react-i18next": "^14.0.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^6.1.0"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.1"
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "copyfiles": "^2.4.1",
+    "rollup": "^4",
+    "rollup-plugin-dts": "^6.1.0"
   },
   "gitHead": "c80e68b870f0c9ffd537106fb2f010138724a7aa"
 }

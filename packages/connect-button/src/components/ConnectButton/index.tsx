@@ -1,5 +1,12 @@
 import { ButtonProps } from "@mui/material";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  Fragment,
+} from "react";
 import useSolana from "../../hooks/useSolana";
 import { ConnectWalletContext } from "../../provider/ConnectWallet/context";
 import { useTranslation } from "react-i18next";
@@ -78,7 +85,7 @@ const ConnectButton = ({
   }, [restartSession, status]);
 
   return (
-    <>
+    <Fragment>
       {isSmallScreen && compresedView ? (
         <IconButton
           id="connect-wallet-button"
@@ -106,7 +113,7 @@ const ConnectButton = ({
         handleClose={handleClose}
         disableMagicLink={disableMagicLink}
       />
-    </>
+    </Fragment>
   );
 };
 

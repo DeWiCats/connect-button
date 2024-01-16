@@ -1,5 +1,5 @@
 import { DialogProps } from "@mui/material";
-import { useCallback, useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import useSolana from "../../../hooks/useSolana";
 import { MagicLinkSecure } from "../../../components/MagicLinkSecure";
 import { ConnectWalletContext } from "../../../provider/ConnectWallet/context";
@@ -177,7 +177,8 @@ const ConnectDialog = ({
       {connecting ? (
         <LoadingDialog />
       ) : (
-        <>
+        <React.Fragment>
+          {" "}
           {getDialogHeader()}
           {getDialogContent()}
           {
@@ -186,7 +187,7 @@ const ConnectDialog = ({
               <MagicLinkSecure />
             )
           }
-        </>
+        </React.Fragment>
       )}
     </Dialog>
   );

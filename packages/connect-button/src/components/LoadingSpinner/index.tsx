@@ -37,12 +37,7 @@ export default function LoadingSpinner({
   return (
     <Centered>
       <LogoCircle>
-        <img
-          alt="loading-spinner"
-          src={Spinner.src}
-          width={size}
-          height={size}
-        />
+        <img alt="loading-spinner" src={Spinner} width={size} height={size} />
       </LogoCircle>
     </Centered>
   );

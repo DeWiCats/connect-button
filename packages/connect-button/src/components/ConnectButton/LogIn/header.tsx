@@ -27,7 +27,7 @@ export const LogInHeader = ({ handleClose }: LogInHeaderProps) => {
     <DialogHeader>
       <DialogHeader.Actions>
         <LogoWrapper>
-          <img alt="dewi-logo" src={DeWiLogo.src} width={59} height={59} />
+          <img alt="dewi-logo" src={DeWiLogo} width={59} height={59} />
         </LogoWrapper>
         <DialogActionButton
           className="end"
