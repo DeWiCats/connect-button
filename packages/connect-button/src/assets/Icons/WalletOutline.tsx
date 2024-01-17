@@ -1,8 +1,5 @@
 // @flow
-
-import React from "react";
-
-const WalletOutlineIcon = ({
+export const WalletOutline = ({
   size = 20,
   color = "#fff",
 }: {
@@ -19,5 +16,3 @@ const WalletOutlineIcon = ({
     </svg>
   );
 };
-
-export default WalletOutlineIcon;

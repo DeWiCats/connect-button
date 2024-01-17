@@ -1,4 +1,4 @@
-const ExclamationSolid = () => {
+export const ExclamationSolid = () => {
   return (
     <svg
       width="24"
@@ -16,5 +16,3 @@ const ExclamationSolid = () => {
     </svg>
   );
 };
-
-export default ExclamationSolid;

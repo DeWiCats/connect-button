@@ -3,11 +3,11 @@ import {
   DialogHeader,
   DialogLogoWrapper,
 } from "../../../components/Dialog";
-import { Close } from "@mui/icons-material";
 import { Typography, styled } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import DeWiLogo from "../../../assets/dewi-logo-cut.png";
 import { ComponentType } from "react";
+import { Close } from "../../../assets/Icons";
 
 const LogoWrapper = styled(DialogLogoWrapper)({
   alignItems: "flex-end",
@@ -49,7 +49,7 @@ export const LogInHeader = ({ handleClose, Logo }: LogInHeaderProps) => {
           onClick={handleClose}
           aria-label="close"
         >
-          <Close fontSize="small" />
+          <Close />
         </DialogActionButton>
       </DialogHeader.Actions>
       <DialogHeader.Title>

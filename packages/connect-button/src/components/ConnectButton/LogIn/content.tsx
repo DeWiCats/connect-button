@@ -1,10 +1,8 @@
 import React from "react";
 import { Typography, styled } from "@mui/material";
-import { MailOutline } from "@mui/icons-material";
 import { DialogContent, DialogIconWrapper } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import WalletOutlineIcon from "../../../assets/WalletOutlineIcon";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { ArrowFoward, WalletOutline, MailOutline } from "../../../assets/Icons";
 
 const LogInButton = styled("button")({
   display: "grid",
@@ -29,7 +27,7 @@ const LogInButton = styled("button")({
   },
 });
 
-const ChevronRIcon = styled(ChevronRightIcon)({
+const ArrowFowardIcon = styled(ArrowFoward)({
   color: "#F8F9FA",
   opacity: 0.2,
 });
@@ -53,13 +51,13 @@ export const LogInContent = ({
         <LogInButton onClick={handleMagicLinkLogIn}>
           <DialogIconWrapper Icon={MailOutline} />
           <Typography>{t("connectWallet.login.email")}</Typography>
-          <ChevronRIcon />
+          <ArrowFowardIcon />
         </LogInButton>
       )}
       <LogInButton onClick={handleWalletLogIn}>
-        <DialogIconWrapper Icon={WalletOutlineIcon} />
+        <DialogIconWrapper Icon={WalletOutline} />
         <Typography>{t("connectWallet.login.wallet")}</Typography>
-        <ChevronRIcon />
+        <ArrowFowardIcon />
       </LogInButton>
     </DialogContent>
   );

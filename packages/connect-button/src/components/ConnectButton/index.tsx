@@ -14,9 +14,8 @@ import { useTranslation } from "react-i18next";
 import { Button, IconButton } from "../../components/Button";
 import ConnectDialog from "./ConnectDialog";
 import { getPublicAddress } from "../../utils/helpers";
-import WalletOutlineIcon from "../../assets/WalletOutlineIcon";
-import { WalletIcon } from "@solana/wallet-adapter-material-ui";
 import useIsSmallScreen from "../../hooks/useIsSmallScreen";
+import { WalletOutline, SolanaWallet } from "../../assets/Icons";
 
 type ConnectButtonProps = {
   compresedView?: boolean;
@@ -98,11 +97,11 @@ const ConnectButton = ({
           size="medium"
           {...rest}
         >
-          <WalletOutlineIcon />
+          <WalletOutline />
         </IconButton>
       ) : (
         <Button
-          startIcon={<WalletIcon wallet={wallet} />}
+          startIcon={<SolanaWallet wallet={wallet} />}
           onClick={handleOpenDialog}
           aria-haspopup="true"
           size="large"

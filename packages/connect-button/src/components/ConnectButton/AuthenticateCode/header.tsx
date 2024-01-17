@@ -1,5 +1,3 @@
-import SparkleIcon from "../../../assets/SparkleIcon";
-import { ArrowBackIosNew, Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import useSolana from "../../../hooks/useSolana";
 import {
@@ -9,6 +7,7 @@ import {
 } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
 import { useCallback } from "react";
+import { ArrowBack, Close, Sparkle } from "../../../assets/Icons";
 
 type WalletsHeaderProps = {
   handleClose: () => void;
@@ -30,13 +29,13 @@ export const AuthenticateCodeHeader = ({
     <DialogHeader>
       <DialogHeader.Actions>
         <DialogActionButton onClick={onBack}>
-          <ArrowBackIosNew fontSize="small" />
+          <ArrowBack />
         </DialogActionButton>
         <DialogLogoWrapper className="center">
-          <SparkleIcon size={42} color={"hsl(214, 61%, 53%"} />
+          <Sparkle size={42} color={"hsl(214, 61%, 53%"} />
         </DialogLogoWrapper>
         <DialogActionButton className="end" onClick={handleCloseButton}>
-          <Close fontSize="small" />
+          <Close />
         </DialogActionButton>
       </DialogHeader.Actions>
       <DialogHeader.Title>

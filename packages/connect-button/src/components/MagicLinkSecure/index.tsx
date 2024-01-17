@@ -1,4 +1,4 @@
-import MagicLink from "../../assets/MagicLink";
+import { MagicLink } from "../../assets/Icons";
 import { styled } from "@mui/material";
 
 const Secure = styled("div")({

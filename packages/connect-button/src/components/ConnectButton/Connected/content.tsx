@@ -7,9 +7,11 @@ import {
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { DialogContent } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import DisconnectWalletIcon from "../../../assets/DisconnectWalletIcon";
-import CopyAddressIcon from "../../../assets/CopyAddressIcon";
-import ChangeWalletIcon from "../../../assets/ChangeWalletIcon";
+import {
+  ChangeWallet,
+  CopyAddress,
+  DisconnectWallet,
+} from "../../../assets/Icons";
 
 interface ConnectedContentButton {
   changeWallet: () => void;
@@ -41,19 +43,19 @@ export const ConnectedContent = ({
     <DialogContent id="wallet-menu" sx={{ gap: "0.5rem" }}>
       <ConnectedListItem
         onClick={handleCopyAddress}
-        Icon={CopyAddressIcon}
+        Icon={CopyAddress}
         text={t("connectWallet.connected.copyAddress")}
       />
       {!magicLogin && (
         <ConnectedListItem
           onClick={changeWallet}
-          Icon={ChangeWalletIcon}
+          Icon={ChangeWallet}
           text={t("connectWallet.connected.changeWallet")}
         />
       )}
       <ConnectedListItem
         onClick={handleDisconnect}
-        Icon={DisconnectWalletIcon}
+        Icon={DisconnectWallet}
         text={t("connectWallet.connected.disconnect")}
       />
     </DialogContent>

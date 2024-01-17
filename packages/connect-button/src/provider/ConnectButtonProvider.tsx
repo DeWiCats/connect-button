@@ -3,7 +3,6 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
 import { Connection } from "@solana/web3.js";
 import {
   PhantomWalletAdapter,
@@ -35,13 +34,11 @@ const ConnectButtonProvider = ({
 
   const renderChildrenProviders = () => {
     return (
-      <WalletDialogProvider>
-        <ConnectWalletProvider>
-          <SolanaRPCProvider solanaRpcHost={solanaRpcHost}>
-            {children}
-          </SolanaRPCProvider>
-        </ConnectWalletProvider>
-      </WalletDialogProvider>
+      <ConnectWalletProvider>
+        <SolanaRPCProvider solanaRpcHost={solanaRpcHost}>
+          {children}
+        </SolanaRPCProvider>
+      </ConnectWalletProvider>
     );
   };
 

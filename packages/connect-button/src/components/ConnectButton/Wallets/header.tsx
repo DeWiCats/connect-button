@@ -1,12 +1,11 @@
-import WalletOutlineIcon from "../../../assets/WalletOutlineIcon";
 import {
   DialogActionButton,
   DialogHeader,
   DialogLogoWrapper,
 } from "../../../components/Dialog";
-import { ArrowBackIosNew, Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { ArrowBack, WalletOutline, Close } from "../../../assets/Icons";
 
 type WalletsHeaderProps = {
   handleClose: () => void;
@@ -20,13 +19,13 @@ export const WalletsHeader = ({ handleClose, onBack }: WalletsHeaderProps) => {
     <DialogHeader>
       <DialogHeader.Actions>
         <DialogActionButton className="start" onClick={onBack}>
-          <ArrowBackIosNew fontSize="small" />
+          <ArrowBack />
         </DialogActionButton>
         <DialogLogoWrapper>
-          <WalletOutlineIcon size={30} color="#66A9F1" />
+          <WalletOutline size={30} color="#66A9F1" />
         </DialogLogoWrapper>
         <DialogActionButton className="end" onClick={handleClose}>
-          <Close fontSize="small" />
+          <Close />
         </DialogActionButton>
       </DialogHeader.Actions>
       <DialogHeader.Title>

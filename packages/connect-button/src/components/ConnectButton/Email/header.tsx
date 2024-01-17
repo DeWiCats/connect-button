@@ -3,9 +3,9 @@ import {
   DialogHeader,
   DialogLogoWrapper,
 } from "../../../components/Dialog";
-import { ArrowBackIosNew, Close, MailOutline } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { ArrowBack, Close, MailOutline } from "../../../assets/Icons";
 
 type WalletsHeaderProps = {
   handleClose: () => void;
@@ -19,13 +19,13 @@ export const EmailHeader = ({ handleClose, onBack }: WalletsHeaderProps) => {
     <DialogHeader>
       <DialogHeader.Actions>
         <DialogActionButton className="start" onClick={onBack}>
-          <ArrowBackIosNew fontSize="small" />
+          <ArrowBack />
         </DialogActionButton>
         <DialogLogoWrapper>
-          <MailOutline sx={{ color: "#66A9F1", fontSize: "2.5rem" }} />
+          <MailOutline size={40} />
         </DialogLogoWrapper>
         <DialogActionButton className="end" onClick={handleClose}>
-          <Close fontSize="small" />
+          <Close />
         </DialogActionButton>
       </DialogHeader.Actions>
       <DialogHeader.Title>

@@ -1,6 +1,5 @@
 import { DialogContent } from "../../../components/Dialog";
 import useSolana from "../../../hooks/useSolana";
-import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import { Button, Collapse, List, ListItem } from "@mui/material";
 import type { WalletName } from "@solana/wallet-adapter-base";
 import { WalletReadyState } from "@solana/wallet-adapter-base";
@@ -9,6 +8,7 @@ import type { SyntheticEvent } from "react";
 import React, { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { WalletListItem } from "./listItem";
+import { ArrowDropDown, ArrowDropUp } from "../../../assets/Icons";
 
 type WalletsContentProps = {
   featuredWallets?: number;
@@ -89,9 +89,9 @@ export const WalletsContent = ({
               ? t("connectWallet.wallets.lessOptions")
               : t("connectWallet.wallets.moreOptions")}
             {expanded ? (
-              <ArrowDropUp fontSize="medium" />
+              <ArrowDropUp />
             ) : (
-              <ArrowDropDown fontSize="medium" />
+              <ArrowDropDown />
             )}
           </Button>
         </ListItem>

@@ -34,13 +34,11 @@
     "@metaplex-foundation/umi": "^0.8.10",
     "@metaplex-foundation/umi-bundle-defaults": "^0.8.10",
     "@metaplex-foundation/umi-signer-wallet-adapters": "^0.8.10",
-    "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.3",
     "@particle-network/auth": "^0.5.5",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-replace": "^5.0.5",
     "@solana/wallet-adapter-base": "^0.9.22",
-    "@solana/wallet-adapter-material-ui": "^0.16.30",
     "@solana/wallet-adapter-react": "^0.15.19",
     "@solana/wallet-adapter-react-ui": "^0.9.31",
     "@solana/wallet-adapter-wallets": "0.19.18",
@@ -65,5 +63,5 @@
     "rollup": "^4",
     "rollup-plugin-dts": "^6.1.0"
   },
-  "gitHead": "2d5129e90e03ebbe55b42407f3e9eb7b55ba2cd4"
+  "gitHead": "741ea46c8f8f67a3c5f0ca11c60bc075e68722f0"
 }

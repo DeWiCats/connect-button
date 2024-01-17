@@ -3,7 +3,7 @@ import { Button, TextField, styled } from "@mui/material";
 import { ChangeEvent, KeyboardEvent, useCallback, useState } from "react";
 import { DialogContent, DialogErrorMessage } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import ExclamationSolid from "../../../assets/ExclamationSolid";
+import { ExclamationSolid } from "../../../assets/Icons";
 
 const EmailField = styled(TextField)(({ error }: { error: boolean }) => ({
   width: "100%",

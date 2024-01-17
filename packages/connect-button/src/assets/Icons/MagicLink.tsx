@@ -1,4 +1,4 @@
-export default function MagicLink() {
+export const MagicLink = () => {
   return (
     <svg
       width="63"

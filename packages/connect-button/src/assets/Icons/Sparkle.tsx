@@ -3,7 +3,7 @@ type IconProps = {
   color?: string;
 };
 
-export default function SparkleIcon({ size = 23, color = "#fff" }: IconProps) {
+export const Sparkle = ({ size = 23, color = "#fff" }: IconProps) => {
   return (
     <svg
       width={size}
@@ -18,4 +18,4 @@ export default function SparkleIcon({ size = 23, color = "#fff" }: IconProps) {
       />
     </svg>
   );
-}
+};

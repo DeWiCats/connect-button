@@ -54,14 +54,10 @@ const ProviderWrapper = ({ children }) => {
 
 ```javascript
 import dynamic from "next/dynamic";
+import { useSolana } from "@dewicats/connect-button";
 
 const ConnectButton = dynamic(
   async () => await import("@dewicats/connect-button"),
-  { ssr: false }
-);
-
-const useSolana = dynamic(
-  async () => (await import("@dewicats/connect-button")).useSolana,
   { ssr: false }
 );
 

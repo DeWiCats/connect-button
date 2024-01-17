@@ -1,4 +1,4 @@
-const DisconnectWalletIcon = () => {
+export const DisconnectWallet = () => {
   return (
     <svg
       width="35"
@@ -15,5 +15,3 @@ const DisconnectWalletIcon = () => {
     </svg>
   );
 };
-
-export default DisconnectWalletIcon;

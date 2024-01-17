@@ -1,8 +1,8 @@
 import { DialogActionButton, DialogHeader } from "../../../components/Dialog";
-import { Close } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { getPublicAddress } from "../../../utils/helpers";
 import JazzIcon from "../../JazzIcon";
+import { Close } from "../../../assets/Icons";
 
 type ConnectedHeaderProps = {
   handleClose: () => void;
@@ -22,7 +22,7 @@ export const ConnectedHeader = ({
           diameter={70}
         />
         <DialogActionButton className="end" onClick={handleClose}>
-          <Close fontSize="small" />
+          <Close />
         </DialogActionButton>
       </DialogHeader.Actions>
       <DialogHeader.Title>

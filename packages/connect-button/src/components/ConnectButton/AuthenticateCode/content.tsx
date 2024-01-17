@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { DialogContent, DialogErrorMessage } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
 import PinInput from "../../../components/PinInput";
-import ExclamationSolid from "../../../assets/ExclamationSolid";
+import { ExclamationSolid } from "../../../assets/Icons";
 
 type AuthenticateCodeContentProp = {
   error: boolean;

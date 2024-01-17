@@ -1,4 +1,4 @@
-const CopyAddressIcon = () => {
+export const CopyAddress = () => {
   return (
     <svg
       width="35"
@@ -21,5 +21,3 @@ const CopyAddressIcon = () => {
     </svg>
   );
 };
-
-export default CopyAddressIcon;
