@@ -1,11 +1,12 @@
 import { ButtonProps } from "@mui/material";
-import React, {
+import {
   useCallback,
   useContext,
   useEffect,
   useMemo,
   useState,
   Fragment,
+  ComponentType,
 } from "react";
 import useSolana from "../../hooks/useSolana";
 import { ConnectWalletContext } from "../../provider/ConnectWallet/context";
@@ -20,14 +21,16 @@ import useIsSmallScreen from "../../hooks/useIsSmallScreen";
 type ConnectButtonProps = {
   compresedView?: boolean;
   disableMagicLink?: boolean;
+  logo?: ComponentType;
 } & ButtonProps;
 
 const ConnectButton = ({
   compresedView = false,
   disableMagicLink = false,
+  logo,
   ...rest
 }: ConnectButtonProps) => {
-  const { publicAddress, wallet, magicAuthenticationStatus, restartSession } =
+  const { publicKey, wallet, magicAuthenticationStatus, restartSession } =
     useSolana();
   const { t } = useTranslation();
   const { walletDialogState, updateWalletDialogState } =
@@ -42,7 +45,7 @@ const ConnectButton = ({
   }, []);
 
   useEffect(() => {
-    const isConnected = !!wallet || !!publicAddress;
+    const isConnected = !!wallet || !!publicKey;
     if (magicAuthenticationStatus === "authenticated") {
       handleClose();
       if (!isConnected || walletDialogState !== "connected") {
@@ -71,11 +74,11 @@ const ConnectButton = ({
   }, []);
 
   const content = useMemo(() => {
-    if (publicAddress) {
-      return getPublicAddress(publicAddress);
+    if (publicKey) {
+      return getPublicAddress(publicKey.toBase58());
     }
     return t("connectWallet.connectButton");
-  }, [publicAddress, t]);
+  }, [publicKey, t]);
 
   const handleOpenDialog = () => {
     setOpen(true);
@@ -113,6 +116,7 @@ const ConnectButton = ({
         open={open}
         handleClose={handleClose}
         disableMagicLink={disableMagicLink}
+        logo={logo}
       />
     </Fragment>
   );

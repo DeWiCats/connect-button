@@ -35,7 +35,7 @@ export type State = {
   didToken: DIDToken | null;
   metadata: UserMetadata | null;
   error: ErrorCode | null;
-  status: MagicAuthenticationStatus;
+  magicAuthenticationStatus: MagicAuthenticationStatus;
 };
 
 export type Action =

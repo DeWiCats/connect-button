@@ -60,7 +60,7 @@ export const MagicProvider = ({
     didToken: null,
     metadata: null,
     error: null,
-    status: "unauthenticated",
+    magicAuthenticationStatus: "unauthenticated",
   });
 
   useEffect(() => {

@@ -6,12 +6,12 @@ import JazzIcon from "../../JazzIcon";
 
 type ConnectedHeaderProps = {
   handleClose: () => void;
-  publicAddress: string;
+  publicAddress: string | undefined;
 };
 
 export const ConnectedHeader = ({
   handleClose,
-  publicAddress,
+  publicAddress = "",
 }: ConnectedHeaderProps) => {
   return (
     <DialogHeader>

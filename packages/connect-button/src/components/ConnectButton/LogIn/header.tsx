@@ -7,27 +7,42 @@ import { Close } from "@mui/icons-material";
 import { Typography, styled } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import DeWiLogo from "../../../assets/dewi-logo-cut.png";
+import { ComponentType } from "react";
 
 const LogoWrapper = styled(DialogLogoWrapper)({
   alignItems: "flex-end",
+  height: "72px",
+  width: "72px",
   backgroundColor: "hsl(225, 3%, 76%)",
-  "> img": {
+  "> img.dewi-logo": {
     filter: "grayscale(80%)",
+    alignSelf: "end",
   },
 });
 
 type LogInHeaderProps = {
   handleClose: () => void;
+  Logo?: ComponentType;
 };
 
-export const LogInHeader = ({ handleClose }: LogInHeaderProps) => {
+export const LogInHeader = ({ handleClose, Logo }: LogInHeaderProps) => {
   const { t } = useTranslation();
 
   return (
     <DialogHeader>
       <DialogHeader.Actions>
         <LogoWrapper>
-          <img alt="dewi-logo" src={DeWiLogo} width={59} height={59} />
+          {Logo ? (
+            <Logo />
+          ) : (
+            <img
+              className="dewi-logo"
+              alt="dewi-logo"
+              src={DeWiLogo}
+              height={60}
+              width={60}
+            />
+          )}
         </LogoWrapper>
         <DialogActionButton
           className="end"

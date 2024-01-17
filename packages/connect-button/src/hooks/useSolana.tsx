@@ -21,8 +21,11 @@ import { useMagic, MagicContextValues } from "../provider/MagicProvider/index";
 import useSolanaRPC from "../provider/SolanaProvider/useSolanaRPC";
 
 type SolanaWalletData = MagicContextValues &
-  Omit<WalletContextState, "connect" | "connecting" | "disconnect"> & {
-    publicAddress: string;
+  Omit<
+    WalletContextState,
+    "connect" | "connecting" | "disconnect" | "publicKey"
+  > & {
+    publicKey: PublicKey | undefined;
     connecting: boolean;
     connected: boolean;
     connect: ({
@@ -132,14 +135,14 @@ const useSolana = (): SolanaWalletData => {
     const { metadata } = MagicWallet;
 
     if (publicKey) {
-      return publicKey?.toBase58();
+      return publicKey;
     }
 
     if (metadata && metadata?.publicAddress) {
-      return metadata?.publicAddress;
+      return new PublicKey(metadata.publicAddress);
     }
 
-    return "";
+    return;
   }, [MagicWallet, SolanaWallet]);
 
   const getLoading = useCallback(() => {
@@ -174,7 +177,7 @@ const useSolana = (): SolanaWalletData => {
     ...MagicWallet,
     // Solana-wallet
     ...SolanaWallet,
-    publicAddress: getPublicAddress(),
+    publicKey: getPublicAddress(),
     connecting: getLoading(),
     connected: getConnected(),
     connect,

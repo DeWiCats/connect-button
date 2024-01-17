@@ -7,28 +7,28 @@ export function magicReducer(state: State, action: Action): State {
         didToken: null,
         metadata: null,
         error: null,
-        status: "pending",
+        magicAuthenticationStatus: "pending",
       };
     case "set-session":
       return {
         didToken: action.token,
         metadata: action.meta,
         error: null,
-        status: "authenticated",
+        magicAuthenticationStatus: "authenticated",
       };
     case "remove-session":
       return {
         didToken: null,
         metadata: null,
         error: null,
-        status: "unauthenticated",
+        magicAuthenticationStatus: "unauthenticated",
       };
     case "error":
       return {
         didToken: null,
         metadata: null,
         error: action.error,
-        status: "errored",
+        magicAuthenticationStatus: "errored",
       };
     case "login-code":
       return {
@@ -39,21 +39,21 @@ export function magicReducer(state: State, action: Action): State {
           publicAddress: null,
         },
         error: null,
-        status: "authenticationCode",
+        magicAuthenticationStatus: "authenticationCode",
       };
     case "invalid-code":
       return {
         didToken: null,
         metadata: null,
         error: null,
-        status: "invalid-code",
+        magicAuthenticationStatus: "invalid-code",
       };
     case "restart-session":
       return {
         didToken: null,
         metadata: null,
         error: null,
-        status: "unauthenticated",
+        magicAuthenticationStatus: "unauthenticated",
       };
     default:
       return state;

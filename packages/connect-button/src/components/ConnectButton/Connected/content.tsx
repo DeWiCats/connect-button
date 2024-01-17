@@ -15,7 +15,7 @@ interface ConnectedContentButton {
   changeWallet: () => void;
   handleClose: () => void;
   disconnect: () => Promise<void>;
-  publicAddress: string;
+  publicAddress: string | undefined;
   magicLogin: boolean;
 }
 
@@ -23,7 +23,7 @@ export const ConnectedContent = ({
   changeWallet,
   handleClose,
   disconnect,
-  publicAddress,
+  publicAddress = "",
   magicLogin = false,
 }: ConnectedContentButton) => {
   const { t } = useTranslation();

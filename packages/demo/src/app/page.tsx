@@ -1,20 +1,20 @@
 "use client";
 
 import ConnectButton, { useSolana } from "@dewicats/connect-button";
+import logo from "../assets/surprised-cat.jpeg";
+import Image from "next/image";
 
 export default function Home() {
-  const { publicAddress, magicAuthenticationStatus, connected, connecting } = useSolana();
+  const { publicKey } = useSolana();
+
+  const Logo = () => (
+    <Image src={logo} alt="surprised cat" width={70} height={70} />
+  );
 
   return (
-    <main>
-      <h1>Wallet Button</h1>
-      <ol>
-        <li>publicAddress: {publicAddress}</li>
-        <li>status: {magicAuthenticationStatus}</li>
-        <li>connected: {connected}</li>
-        <li>connecting: {connecting}</li>
-      </ol>
-      <ConnectButton compresedView={true} disableMagicLink={true} />
+    <main className="container">
+      <h1>Wallet Connect Button</h1>
+      <ConnectButton compresedView logo={Logo} />
     </main>
   );
 }
