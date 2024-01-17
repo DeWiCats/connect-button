@@ -5,8 +5,8 @@
 The `@dewicats/connect-button` package provides a simple and efficient way to integrate Solana wallet connectivity into Next.js applications. It offers components and hooks that facilitate connecting to Solana wallets like Phantom or Solflare and using MagicLink for email-based user authentication.
 
 <div style="display: flex; justify-content: space-evenly;">
-  <img src="src/assets/desktop-example.gif" height="500" alt="connect button mobile example">
-  <img src="src/assets/mobile-example.gif" height="500" alt="connect button desktop exampleF">
+  <img src="https://raw.githubusercontent.com/DeWiCats/connect-button/main/packages/connect-button/src/assets/mobile-example.gif" height="500" alt="connect button mobile example">
+  <img src="https://raw.githubusercontent.com/DeWiCats/connect-button/main/packages/connect-button/src/assets/desktop-example.gif" height="500" alt="connect button desktop exampleF">
 </div>
 
 ## Installation
