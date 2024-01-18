@@ -9,7 +9,7 @@ const ProviderWrapper = ({ children }: { children: ReactNode }) => {
   const MAGIC_KEY = process.env.NEXT_PUBLIC_MAGIC_KEY;
 
   return (
-    <ConnectButtonProvider magicKey={MAGIC_KEY} solanaRpcHost={rpcHost}>
+    <ConnectButtonProvider magicKey={'MAGIC_KEY'} solanaRpcHost={rpcHost}>
       {children}
     </ConnectButtonProvider>
   );

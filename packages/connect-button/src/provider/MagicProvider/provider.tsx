@@ -71,7 +71,6 @@ export const MagicProvider = ({
         const isLoggedIn = await magic.user.isLoggedIn();
         if (isLoggedIn) {
           dispatch({ type: "start" });
-          // eslint-disable-next-line prefer-const
           let [meta, token] = await Promise.all([
             magic.user.getMetadata(),
             magic.user.getIdToken(),
@@ -81,8 +80,13 @@ export const MagicProvider = ({
         } else {
           dispatch({ type: "remove-session" });
         }
-      } catch (error: any) {
-        dispatch({ type: "error", error });
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error("MAGIC Error: ", error.message);
+          dispatch({ type: "error", error });
+        } else {
+          throw error;
+        }
       }
     }
 
@@ -108,8 +112,14 @@ export const MagicProvider = ({
           const meta = await magic.user.getMetadata();
           dispatch({ type: "set-session", token: result, meta });
         })
-        .on("error", (reason) => {
-          dispatch({ type: "error", error: reason });
+        .on("error", (error) => {
+          if (error instanceof Error) {
+            console.error("MAGIC Error: ", error.message);
+            dispatch({ type: "error", error });
+          } else {
+            throw error;
+          }
+
           login.emit("cancel");
         })
         .catch(() => {
@@ -138,8 +148,13 @@ export const MagicProvider = ({
     try {
       await magic.user.logout();
       dispatch({ type: "remove-session" });
-    } catch (error: any) {
-      dispatch({ type: "error", error });
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error("MAGIC Error: ", error.message);
+        dispatch({ type: "error", error });
+      } else {
+        throw error;
+      }
     }
   }, [magic]);
 

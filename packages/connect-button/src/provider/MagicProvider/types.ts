@@ -1,4 +1,4 @@
-import { ErrorCode, LoginWithEmailOTPEvents, PromiEvent } from "magic-sdk";
+import { LoginWithEmailOTPEvents, PromiEvent } from "magic-sdk";
 import { InstanceWithExtensions, SDKBase } from "@magic-sdk/provider";
 import { SolanaExtension } from "@magic-ext/solana";
 
@@ -27,14 +27,14 @@ export type MagicContextValues = {
   restartSession: () => void;
   magicAuthenticationStatus: MagicAuthenticationStatus;
   metadata: UserMetadata | null;
-  error: ErrorCode | null;
+  error: Error | null;
   magic?: InstanceWithExtensions<SDKBase, SolanaExtension[]> | false;
 };
 
 export type State = {
   didToken: DIDToken | null;
   metadata: UserMetadata | null;
-  error: ErrorCode | null;
+  error: Error | null;
   magicAuthenticationStatus: MagicAuthenticationStatus;
 };
 
@@ -42,7 +42,7 @@ export type Action =
   | { type: "start" }
   | { type: "set-session"; token: DIDToken | null; meta: UserMetadata | null }
   | { type: "remove-session" }
-  | { type: "error"; error: ErrorCode }
+  | { type: "error"; error: Error }
   | { type: "invalid-code" }
   | { type: "login-code"; email: string }
   | { type: "restart-session" };
@@ -51,7 +51,7 @@ export type MagicLogIn = PromiEvent<
   string | null,
   LoginWithEmailOTPEvents & {
     done: (result: string | null) => void;
-    error: (reason: any) => void;
+    error: (error: Error) => void;
     settled: () => void;
   }
 >;
