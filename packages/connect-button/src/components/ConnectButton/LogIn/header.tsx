@@ -23,9 +23,14 @@ const LogoWrapper = styled(DialogLogoWrapper)({
 type LogInHeaderProps = {
   handleClose: () => void;
   Logo?: ComponentType;
+  connectLabel?: string;
 };
 
-export const LogInHeader = ({ handleClose, Logo }: LogInHeaderProps) => {
+export const LogInHeader = ({
+  handleClose,
+  Logo,
+  connectLabel,
+}: LogInHeaderProps) => {
   const { t } = useTranslation();
 
   return (
@@ -54,7 +59,7 @@ export const LogInHeader = ({ handleClose, Logo }: LogInHeaderProps) => {
       </DialogHeader.Actions>
       <DialogHeader.Title>
         <Typography sx={{ textAlign: "center" }}>
-          {t("connectWallet.login.title")}
+          {connectLabel || t("connectWallet.login.title")}
         </Typography>
       </DialogHeader.Title>
     </DialogHeader>

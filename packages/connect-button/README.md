@@ -74,15 +74,27 @@ export default function Home() {
 }
 ```
 
+### Next Config
+
+Add the following to your `next.config.js` file to ensure that the `@dewicats/connect-button` package is properly bundled.
+
+```javascript
+export default transpileModules([
+  "mui-one-time-password-input",
+  "@dewicats/connect-button",
+])(nextConfig);
+```
+
 ## Attributes
 
 ### Connect Button
 
-| Attribute          | Type           | Description                              |
-| :----------------- | :--------      | :--------------------------------------- |
-| `compresedView`    | `boolean`      | Turn on compresed view for small screens |
-| `disableMagicLink` | `boolean`      | Disable Magic Link login option          |
-| `logo`             | `JSX.Element`  | Change the logIn logo                    |
+| Attribute          | Type          | Description                              |
+| :----------------- | :------------ | :--------------------------------------- |
+| `compresedView`    | `boolean`     | Turn on compresed view for small screens |
+| `disableMagicLink` | `boolean`     | Disable Magic Link login option          |
+| `logo`             | `JSX.Element` | Change the logIn logo                    |
+| `connectLabel`     | `string`      | Change the connect button label          |
 
 ### Connect Button Provider
 

@@ -21,12 +21,14 @@ type ConnectButtonProps = {
   compresedView?: boolean;
   disableMagicLink?: boolean;
   logo?: ComponentType;
+  connectLabel?: string;
 } & ButtonProps;
 
 const ConnectButton = ({
   compresedView = false,
   disableMagicLink = false,
   logo,
+  connectLabel,
   ...rest
 }: ConnectButtonProps) => {
   const { publicKey, wallet, magicAuthenticationStatus, restartSession } =
@@ -116,6 +118,7 @@ const ConnectButton = ({
         handleClose={handleClose}
         disableMagicLink={disableMagicLink}
         logo={logo}
+        connectLabel={connectLabel}
       />
     </Fragment>
   );

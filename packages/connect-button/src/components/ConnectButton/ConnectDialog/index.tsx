@@ -23,12 +23,14 @@ type ConnectDialogProps = {
   handleClose: () => void;
   disableMagicLink: boolean;
   logo?: ComponentType;
+  connectLabel?: string;
 } & DialogProps;
 
 const ConnectDialog = ({
   handleClose,
   disableMagicLink,
   logo,
+  connectLabel,
   ...rest
 }: ConnectDialogProps) => {
   const {
@@ -90,7 +92,13 @@ const ConnectDialog = ({
 
   const getDialogHeader = () => {
     const headers = {
-      logIn: <LogInHeader handleClose={handleClose} Logo={logo} />,
+      logIn: (
+        <LogInHeader
+          handleClose={handleClose}
+          Logo={logo}
+          connectLabel={connectLabel}
+        />
+      ),
       wallets: (
         <WalletsHeader
           handleClose={handleClose}

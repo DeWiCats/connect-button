@@ -8,6 +8,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeWiCats/connect-button.git"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn run clean && yarn run rollup -c",
