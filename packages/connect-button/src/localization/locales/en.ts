@@ -35,6 +35,7 @@ const translation = {
       title: "Select your Solana wallet to continue.",
       connected: "Connected",
       detected: "Detected",
+      notDetected: "Not detected",
     },
   },
 };
