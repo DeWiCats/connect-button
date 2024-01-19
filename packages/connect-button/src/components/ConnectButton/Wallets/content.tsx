@@ -28,7 +28,6 @@ export const WalletsContent = ({
     const loadable: Wallet[] = [];
     const notDetected: Wallet[] = [];
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const wallet of wallets) {
       if (wallet.readyState === WalletReadyState.NotDetected) {
         notDetected.push(wallet);
@@ -88,11 +87,7 @@ export const WalletsContent = ({
             {expanded
               ? t("connectWallet.wallets.lessOptions")
               : t("connectWallet.wallets.moreOptions")}
-            {expanded ? (
-              <ArrowDropUp />
-            ) : (
-              <ArrowDropDown />
-            )}
+            {expanded ? <ArrowDropUp /> : <ArrowDropDown />}
           </Button>
         </ListItem>
       ) : null}

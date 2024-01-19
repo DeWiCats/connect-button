@@ -2,7 +2,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import jsx from 'acorn-jsx';
 import image from '@rollup/plugin-image';
 import fs from 'fs';
 import path from 'path';
@@ -12,7 +11,6 @@ import replace from '@rollup/plugin-replace';
 
 const pkg = JSON.parse(fs.readFileSync(path.resolve('./package.json'), 'utf-8'));
 const external = Object.keys(pkg.dependencies || {});
-// const packageJson = require("./package.json");
 
 export default [
     {
@@ -32,8 +30,6 @@ export default [
                 banner: "import React from 'react';"
             },
         ],
-        // acornInjectPlugins: [jsx()],
-        // treeshake: false,
         plugins: [
             resolve(),
             image(),

@@ -16,7 +16,6 @@ export const Button = styled(MaterialButton)({
   background: "hsl(210, 17%, 95%) !important",
   border: "1px solid hsl(210, 12%, 83%)",
   borderRadius: "62rem",
-  // ...(removeIconMargin && { "& .MuiButton-startIcon": { margin: 0 } }),
   "&:disabled": {
     opacity: 0.6,
   },
