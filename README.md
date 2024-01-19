@@ -19,6 +19,10 @@ npm i @dewicats/connect-button
 yarn add @dewicats/connect-button
 ```
 
+## DEMO
+
+[Link to StackBlitz Starter Project](https://stackblitz.com/edit/stackblitz-starters-znkspq?file=README.md)
+
 ## Usage
 
 This package is designed to be used with Next.js and requires dynamic imports to function properly.
