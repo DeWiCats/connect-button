@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ProviderWrapper>{children}</ProviderWrapper>
+        <ProviderWrapper wallets={[]}>{children}</ProviderWrapper>
       </body>
     </html>
   );

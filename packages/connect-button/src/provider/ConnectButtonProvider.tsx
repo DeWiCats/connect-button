@@ -4,22 +4,21 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import { Connection } from "@solana/web3.js";
-import {
-  PhantomWalletAdapter,
-  SolflareWalletAdapter,
-} from "@solana/wallet-adapter-wallets";
 import SolanaRPCProvider from "./SolanaProvider/SolanaRPCProvider";
 import { MagicProvider } from "./MagicProvider";
 import ConnectWalletProvider from "./ConnectWallet/context";
 import LanguageProvider from "../localization/LanguageProvider";
+import { Adapter } from "@solana/wallet-adapter-base";
 
 const ConnectButtonProvider = ({
   solanaRpcHost,
   magicKey,
+  wallets,
   children,
 }: {
   solanaRpcHost: string;
   magicKey?: string;
+  wallets: Adapter[],
   children: ReactNode;
 }) => {
   const connection = useMemo(
@@ -27,10 +26,7 @@ const ConnectButtonProvider = ({
     [solanaRpcHost]
   );
 
-  const wallets = useMemo(
-    () => [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
-    []
-  );
+
 
   const renderChildrenProviders = () => {
     return (
