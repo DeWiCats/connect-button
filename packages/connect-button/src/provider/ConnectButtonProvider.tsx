@@ -9,24 +9,31 @@ import { MagicProvider } from "./MagicProvider";
 import ConnectWalletProvider from "./ConnectWallet/context";
 import LanguageProvider from "../localization/LanguageProvider";
 import { Adapter } from "@solana/wallet-adapter-base";
+import {
+  PhantomWalletAdapter,
+  SolflareWalletAdapter,
+} from "@solana/wallet-adapter-wallets";
+
+const defaultWallets = [
+  new PhantomWalletAdapter(),
+  new SolflareWalletAdapter(),
+];
 
 const ConnectButtonProvider = ({
   solanaRpcHost,
   magicKey,
-  wallets,
+  wallets = defaultWallets,
   children,
 }: {
   solanaRpcHost: string;
   magicKey?: string;
-  wallets: Adapter[],
+  wallets?: Adapter[];
   children: ReactNode;
 }) => {
   const connection = useMemo(
     () => new Connection(solanaRpcHost, { commitment: "confirmed" }),
     [solanaRpcHost]
   );
-
-
 
   const renderChildrenProviders = () => {
     return (

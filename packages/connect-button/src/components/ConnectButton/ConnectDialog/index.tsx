@@ -171,7 +171,7 @@ const ConnectDialog = ({
 
   const dialogHeights = {
     logIn: disableMagicLink ? "12.75rem" : "17.875rem",
-    wallets: "16rem",
+    wallets: "14.5rem",
     email: "16.8rem",
     authenticationCode: "15.6rem",
     connected: "14.625rem",
