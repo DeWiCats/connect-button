@@ -9,7 +9,6 @@ import { MagicProvider } from "./MagicProvider";
 import ConnectWalletProvider from "./ConnectWallet/context";
 import LanguageProvider from "../localization/LanguageProvider";
 import { Adapter } from "@solana/wallet-adapter-base";
-<<<<<<< Updated upstream
 import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
@@ -19,21 +18,17 @@ const defaultWallets = [
   new PhantomWalletAdapter(),
   new SolflareWalletAdapter(),
 ];
-=======
->>>>>>> Stashed changes
 
 const ConnectButtonProvider = ({
   solanaRpcHost,
   magicKey,
   wallets = defaultWallets,
   children,
-  wallets = [],
 }: {
   solanaRpcHost: string;
   magicKey?: string;
   wallets?: Adapter[];
   children: ReactNode;
-  wallets: Adapter[];
 }) => {
   const connection = useMemo(
     () => new Connection(solanaRpcHost, { commitment: "confirmed" }),
