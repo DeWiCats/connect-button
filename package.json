@@ -4,13 +4,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "cd packages/connect-button && yarn build",
+    "build": "cd packages/connect-button && npm run build",
     "watch-button": "lerna watch --scope=@dewicats/connect-button -- lerna run prebuild --scope=@dewicats/connect-button --include-dependents",
     "bootstrap": "lerna bootstrap",
     "test": "jest --coverage",
     "lint": "eslint --ext .ts ./",
     "format": "prettier-standard --format",
-    "preversion": "yarn build",
+    "preversion": "npm run build",
     "demo": "cd packages/demo && yarn dev",
     "demo-build": "cd packages/demo && next build"
   },

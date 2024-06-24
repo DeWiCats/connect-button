@@ -11,7 +11,10 @@ import {
   ChangeWallet,
   CopyAddress,
   DisconnectWallet,
+  Open,
 } from "../../../assets/Icons";
+import { useCallback } from "react";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 interface ConnectedContentButton {
   changeWallet: () => void;
@@ -29,6 +32,8 @@ export const ConnectedContent = ({
   magicLogin = false,
 }: ConnectedContentButton) => {
   const { t } = useTranslation();
+  const { wallet } = useWallet();
+
   const handleCopyAddress = async () => {
     await navigator.clipboard.writeText(publicAddress);
     handleClose();
@@ -39,8 +44,19 @@ export const ConnectedContent = ({
     handleClose();
   };
 
+  const openTiplinkWallet = useCallback(() => {
+    window.open("https://tiplink.io/", "_blank");
+  }, []);
+
   return (
     <DialogContent id="wallet-menu" sx={{ gap: "0.5rem" }}>
+      {wallet?.adapter?.name?.toLowerCase()?.includes("tiplink") && (
+        <ConnectedListItem
+          onClick={openTiplinkWallet}
+          Icon={Open}
+          text={t("connectWallet.connected.openWallet")}
+        />
+      )}
       <ConnectedListItem
         onClick={handleCopyAddress}
         Icon={CopyAddress}

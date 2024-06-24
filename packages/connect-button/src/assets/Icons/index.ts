@@ -12,3 +12,4 @@ export * from "./DisconnectWallet";
 export * from "./ExclamationSolid";
 export * from "./MagicLink";
 export * from "./SolanaWallet";
+export * from "./Open";

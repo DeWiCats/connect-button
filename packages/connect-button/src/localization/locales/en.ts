@@ -18,6 +18,7 @@ const translation = {
       copyAddress: "Copy address",
       changeWallet: "Change Wallet",
       disconnect: "Disconnnect",
+      openWallet: "Open wallet",
     },
     email: {
       error: "Type a valid email",
