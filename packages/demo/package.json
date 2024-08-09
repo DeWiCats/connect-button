@@ -1,13 +1,4 @@
 {
-  "name": "@dewicats/demo",
-  "version": "0.0.17",
-  "license": "MIT",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "contributors": [
     "Marcial Cabrera <marcialandres06@gmail.com>",
     "Luis Perrone <peronif5@gmail.com>"
@@ -16,7 +7,8 @@
     "@dewicats/connect-button": "^0.0.17",
     "@tiplink/wallet-adapter": "^2.1.17",
     "next": "14.0.4",
-    "react": "^18"
+    "react": "^18",
+    "react-async-hook": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -27,5 +19,14 @@
     "eslint-config-next": "14.0.4",
     "typescript": "^5"
   },
-  "gitHead": "97afb66c1124b7d3e3d83c6261906bcea3a683d9"
+  "gitHead": "57625a70eff28976e78b7398f4d2829db2aa38b7",
+  "license": "MIT",
+  "name": "@dewicats/demo",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "version": "0.0.17"
 }

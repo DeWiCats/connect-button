@@ -34,6 +34,7 @@ const ConnectDialog = ({
   ...rest
 }: ConnectDialogProps) => {
   const {
+    connected,
     connecting,
     publicKey,
     wallet,
@@ -44,6 +45,12 @@ const ConnectDialog = ({
   } = useSolana();
   const { walletDialogState, updateWalletDialogState } =
     useContext(ConnectWalletContext);
+
+  useEffect(() => {
+    if (!connected) {
+      updateWalletDialogState("logIn");
+    }
+  }, [connected]);
 
   useEffect(() => {
     if (magicAuthenticationStatus === "authenticated") {
