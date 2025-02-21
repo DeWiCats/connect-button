@@ -4,7 +4,7 @@
     "Luis Perrone <peronif5@gmail.com>"
   ],
   "dependencies": {
-    "@dewicats/connect-button": "^0.0.18",
+    "@dewicats/connect-button": "^0.0.19",
     "@tiplink/wallet-adapter": "^2.1.17",
     "next": "14.0.4",
     "react": "^18",
@@ -28,5 +28,5 @@
     "lint": "next lint",
     "start": "next start"
   },
-  "version": "0.0.18"
+  "version": "0.0.19"
 }
