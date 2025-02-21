@@ -15,7 +15,15 @@ const ProviderWrapper = ({ children }: { children: ReactNode }) => {
 
   return (
     <ConnectButtonProvider
-      wallets={[new PhantomWalletAdapter(), new SolflareWalletAdapter()]}
+      wallets={[
+        new TipLinkWalletAdapter({
+          title: "Name of Dapp",
+          clientId: "9d4a9ae4-e96c-451b-93a6-25d7d90bfd5f",
+          theme: "dark", // pick between "dark"/"light"/"system"
+        }),
+        new PhantomWalletAdapter(),
+        new SolflareWalletAdapter(),
+      ]}
       magicKey={"MAGIC_KEY"}
       solanaRpcHost={rpcHost}
     >

@@ -13,8 +13,8 @@ export default function Home() {
 
   return (
     <main className="container">
-      <h1>Wallet Connect Button</h1>
-      <ConnectButton compresedView logo={Logo} />
+      <h1>Wallet Connect Button Yo</h1>
+      <ConnectButton enableGoogle compresedView logo={Logo} disableMagicLink />
       <SignMessageComponent />
     </main>
   );

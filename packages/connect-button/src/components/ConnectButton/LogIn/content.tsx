@@ -2,7 +2,12 @@ import React from "react";
 import { Typography, styled } from "@mui/material";
 import { DialogContent, DialogIconWrapper } from "../../../components/Dialog";
 import { useTranslation } from "react-i18next";
-import { ArrowFoward, WalletOutline, MailOutline } from "../../../assets/Icons";
+import {
+  ArrowFoward,
+  WalletOutline,
+  MailOutline,
+  GoogleIcon,
+} from "../../../assets/Icons";
 
 const LogInButton = styled("button")({
   display: "grid",
@@ -36,12 +41,16 @@ type LogInContentProps = {
   handleWalletLogIn: () => void;
   handleMagicLinkLogIn: () => void;
   disableMagicLink?: boolean;
+  handleGoogleLogIn?: () => void;
+  enableGoogle?: boolean;
 };
 
 export const LogInContent = ({
   handleWalletLogIn,
   handleMagicLinkLogIn,
+  handleGoogleLogIn,
   disableMagicLink = false,
+  enableGoogle = false,
 }: LogInContentProps) => {
   const { t } = useTranslation();
 
@@ -59,6 +68,14 @@ export const LogInContent = ({
         <Typography>{t("connectWallet.login.wallet")}</Typography>
         <ArrowFowardIcon />
       </LogInButton>
+
+      {enableGoogle && (
+        <LogInButton onClick={handleGoogleLogIn}>
+          <DialogIconWrapper Icon={GoogleIcon} />
+          <Typography>{t("connectWallet.login.google")}</Typography>
+          <ArrowFowardIcon />
+        </LogInButton>
+      )}
     </DialogContent>
   );
 };

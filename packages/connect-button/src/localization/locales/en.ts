@@ -28,6 +28,7 @@ const translation = {
     login: {
       email: "Connect with email",
       wallet: "Connect with wallet",
+      google: "Connect with Google",
       title: "Connect to DeWiCats",
     },
     wallets: {

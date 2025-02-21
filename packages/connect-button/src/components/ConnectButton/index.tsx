@@ -20,6 +20,7 @@ import { WalletOutline, SolanaWallet } from "../../assets/Icons";
 type ConnectButtonProps = {
   compresedView?: boolean;
   disableMagicLink?: boolean;
+  enableGoogle?: boolean;
   logo?: ComponentType;
   connectLabel?: string;
 } & ButtonProps;
@@ -27,6 +28,7 @@ type ConnectButtonProps = {
 const ConnectButton = ({
   compresedView = false,
   disableMagicLink = false,
+  enableGoogle = false,
   logo,
   connectLabel,
   ...rest
@@ -117,6 +119,7 @@ const ConnectButton = ({
         open={open}
         handleClose={handleClose}
         disableMagicLink={disableMagicLink}
+        enableGoogle={enableGoogle}
         logo={logo}
         connectLabel={connectLabel}
       />

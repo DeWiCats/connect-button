@@ -19,7 +19,7 @@
     "eslint-config-next": "14.0.4",
     "typescript": "^5"
   },
-  "gitHead": "57625a70eff28976e78b7398f4d2829db2aa38b7",
+  "gitHead": "d32783a861c7235d3abc7c1426e1827bc99df3c3",
   "license": "MIT",
   "name": "@dewicats/demo",
   "scripts": {

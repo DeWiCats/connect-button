@@ -22,6 +22,7 @@ import {
 type ConnectDialogProps = {
   handleClose: () => void;
   disableMagicLink: boolean;
+  enableGoogle: boolean;
   logo?: ComponentType;
   connectLabel?: string;
 } & DialogProps;
@@ -29,11 +30,13 @@ type ConnectDialogProps = {
 const ConnectDialog = ({
   handleClose,
   disableMagicLink,
+  enableGoogle,
   logo,
   connectLabel,
   ...rest
 }: ConnectDialogProps) => {
   const {
+    wallets,
     connected,
     connecting,
     publicKey,
@@ -42,6 +45,7 @@ const ConnectDialog = ({
     magicAuthenticationStatus,
     cancel,
     restartSession,
+    select,
   } = useSolana();
   const { walletDialogState, updateWalletDialogState } =
     useContext(ConnectWalletContext);
@@ -145,13 +149,27 @@ const ConnectDialog = ({
     return headers[walletDialogState!];
   };
 
+  const handleGoogleLogIn = useCallback(() => {
+    console.log("wallets", wallets);
+    const tipLinkWallet = wallets.find((wallet) =>
+      wallet.adapter.name.includes("Google")
+    );
+
+    if (tipLinkWallet) {
+      select(tipLinkWallet?.adapter.name);
+      handleClose();
+    }
+  }, [select, handleClose, wallets]);
+
   const getDialogContent = () => {
     const contents = {
       logIn: (
         <LogInContent
           handleWalletLogIn={() => updateWalletDialogState("wallets")}
           handleMagicLinkLogIn={() => updateWalletDialogState("email")}
+          handleGoogleLogIn={handleGoogleLogIn}
           disableMagicLink={disableMagicLink}
+          enableGoogle={enableGoogle}
         />
       ),
       wallets: <WalletsContent handleClose={handleClose} />,
